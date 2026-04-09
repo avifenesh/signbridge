@@ -1,0 +1,55 @@
+{
+  "datasets": [
+    {
+      "name": "ASLG-PC12",
+      "description": "English-ASL gloss parallel corpus from Achraf Othman, ~87k sentence pairs",
+      "url": "https://aslg-pc12.github.io/",
+      "license": "NEEDS_VERIFICATION",
+      "type": "parallel_corpus",
+      "agent": 4,
+      "notes": "Primarily useful for Agent 4 (ASL translation). Listed here for cross-reference."
+    },
+    {
+      "name": "WLASL",
+      "description": "Word-Level ASL dataset, 2000 signs, ~21k videos",
+      "url": "https://dxli94.github.io/WLASL/",
+      "license": "NEEDS_VERIFICATION",
+      "type": "video",
+      "agent": 3,
+      "notes": "YouTube-sourced videos. License status of individual videos varies. Must verify per-video."
+    },
+    {
+      "name": "ASL-LEX 2.0",
+      "description": "Lexical database of ASL signs — frequency, iconicity, phonology metadata",
+      "url": "https://asl-lex.org/",
+      "license": "NEEDS_VERIFICATION",
+      "type": "metadata",
+      "agent": 3,
+      "notes": "No video — metadata only. Useful for selecting the 500 most frequent signs."
+    },
+    {
+      "name": "SignBank",
+      "description": "Open sign language video dictionary",
+      "url": "https://signbank.org/",
+      "license": "NEEDS_VERIFICATION",
+      "type": "video",
+      "agent": 3,
+      "notes": "Varies by contributor. Must check individual entries."
+    },
+    {
+      "name": "Gallaudet University Resources",
+      "description": "Various ASL educational resources and publications",
+      "url": "https://www.gallaudet.edu/",
+      "license": "NEEDS_VERIFICATION",
+      "type": "reference",
+      "agent": 3,
+      "notes": "Educational institution. Resources may have academic use restrictions."
+    }
+  ],
+  "license_status": {
+    "NEEDS_VERIFICATION": "Not yet checked — must verify before any data is used",
+    "VERIFIED_OK": "Verified compatible with Apache 2.0 open source use",
+    "RESTRICTED": "Cannot be used — incompatible license",
+    "ACADEMIC_ONLY": "Academic use only — cannot include in distributed app"
+  }
+}

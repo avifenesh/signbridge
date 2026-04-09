@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SignBridge</string>
+    <string name="channel_overlay">SignBridge Overlay</string>
+    <string name="channel_capture">Audio Capture</string>
+    <string name="notification_overlay_title">SignBridge Active</string>
+    <string name="notification_overlay_text">Overlay is running. Tap to open.</string>
+    <string name="notification_capture_title">Audio Capture Active</string>
+    <string name="notification_capture_text">Capturing audio for sign language translation.</string>
+    <string name="notification_ready_title">SignBridge Ready</string>
+    <string name="notification_ready_text">Always-ready mode. Waiting for a call.</string>
+    <string name="action_start_overlay">Start Overlay</string>
+    <string name="action_stop_overlay">Stop</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_quick_phrases">Quick Phrases</string>
+    <string name="label_subtitle">Recognized text appears here</string>
+    <string name="label_confidence_high">High confidence</string>
+    <string name="label_confidence_medium">Medium confidence</string>
+    <string name="label_confidence_low">Low confidence</string>
+    <string name="setup_welcome">Welcome to SignBridge</string>
+    <string name="setup_permissions">Grant permissions to get started</string>
+    <string name="setup_overlay_permission">Draw over other apps</string>
+    <string name="setup_notification_permission">Show notifications</string>
+    <string name="setup_download_models">Download speech models</string>
+    <string name="setup_complete">Setup complete</string>
+</resources>

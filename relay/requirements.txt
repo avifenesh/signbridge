@@ -1,0 +1,6 @@
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.32,<1.0
+pydantic>=2.0,<3.0
+pyrogram>=2.0,<3.0
+pytgcalls>=2.0,<3.0
+ntgcalls>=1.0,<2.0

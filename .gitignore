@@ -1,0 +1,43 @@
+# Secrets
+.env
+
+# Android build
+.gradle/
+build/
+app/build/
+local.properties
+*.iml
+.idea/
+.DS_Store
+*.apk
+*.aab
+*.jks
+*.keystore
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Downloaded ML models (large binaries — download at runtime via setup flow)
+agent4/models/model.onnx
+agent4/models/vocab.txt
+# avatar.glb is kept (17KB procedural placeholder — small enough to commit)
+
+# Dictionary pipeline output (generated — rebuild with scripts)
+dictionary/output/
+__pycache__/
+*.pyc
+*.pyo
+
+# Python virtual environments
+venv/
+.venv/
+
+# Translation pipeline cache
+translation/output/
+.translation_cache/
+
+# Vosk model (downloaded on first launch)
+vosk-model*/
+
+# Gradle wrapper jar (downloaded automatically)
+gradle/wrapper/gradle-wrapper.jar

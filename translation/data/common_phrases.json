@@ -1,0 +1,203 @@
+{
+  "_meta": {
+    "description": "Tier 1 hash table: English sentences/patterns → ASL gloss sequences",
+    "format": "Each entry maps a normalized English string to an ASL gloss array. Patterns use {SLOT} placeholders for variable parts.",
+    "total_exact": 0,
+    "total_patterns": 0
+  },
+  "exact": {
+    "hello": ["HELLO"],
+    "hi": ["HELLO"],
+    "hey": ["HEY"],
+    "goodbye": ["GOODBYE"],
+    "bye": ["GOODBYE"],
+    "bye bye": ["GOODBYE"],
+    "good morning": ["GOOD", "MORNING"],
+    "good afternoon": ["GOOD", "AFTERNOON"],
+    "good evening": ["GOOD", "EVENING"],
+    "good night": ["GOOD", "NIGHT"],
+    "thank you": ["THANK-YOU"],
+    "thanks": ["THANK-YOU"],
+    "thank you very much": ["THANK-YOU", "VERY-MUCH"],
+    "thanks a lot": ["THANK-YOU", "A-LOT"],
+    "you're welcome": ["WELCOME"],
+    "please": ["PLEASE"],
+    "sorry": ["SORRY"],
+    "i'm sorry": ["SORRY", "I"],
+    "excuse me": ["EXCUSE"],
+    "yes": ["YES"],
+    "no": ["NO"],
+    "maybe": ["MAYBE"],
+    "i don't know": ["I", "KNOW", "NOT"],
+    "i don't understand": ["UNDERSTAND", "I", "NOT"],
+    "i understand": ["UNDERSTAND", "I"],
+    "can you repeat that": ["AGAIN", "PLEASE"],
+    "can you say that again": ["AGAIN", "PLEASE"],
+    "what did you say": ["SAY", "YOU", "WHAT"],
+    "one moment": ["ONE-MOMENT"],
+    "hold on": ["WAIT"],
+    "wait": ["WAIT"],
+    "i'll text you": ["I", "TEXT", "YOU", "WILL"],
+    "how are you": ["HOW", "YOU"],
+    "i'm fine": ["FINE", "I"],
+    "i'm good": ["GOOD", "I"],
+    "i'm okay": ["OKAY", "I"],
+    "nice to meet you": ["NICE", "MEET", "YOU"],
+    "what is your name": ["YOUR", "NAME", "WHAT"],
+    "my name is": ["MY", "NAME"],
+    "where are you from": ["YOU", "FROM", "WHERE"],
+    "i am from": ["I", "FROM"],
+    "how old are you": ["YOUR", "AGE", "WHAT"],
+    "what do you do": ["YOUR", "WORK", "WHAT"],
+    "i work at": ["I", "WORK"],
+    "i'm a student": ["STUDENT", "I"],
+    "i'm a teacher": ["TEACHER", "I"],
+    "i'm deaf": ["DEAF", "I"],
+    "i'm hearing": ["HEARING", "I"],
+    "do you sign": ["SIGN", "YOU"],
+    "i sign": ["SIGN", "I"],
+    "i'm learning sign language": ["SIGN", "LANGUAGE", "LEARN", "I"],
+    "what time is it": ["TIME", "WHAT"],
+    "where is the bathroom": ["BATHROOM", "WHERE"],
+    "i need help": ["HELP", "I", "NEED"],
+    "can you help me": ["HELP", "I", "CAN", "YOU"],
+    "i love you": ["I", "LOVE", "YOU"],
+    "happy birthday": ["HAPPY", "BIRTHDAY"],
+    "congratulations": ["CONGRATULATIONS"],
+    "i agree": ["AGREE", "I"],
+    "i disagree": ["AGREE", "I", "NOT"],
+    "that's right": ["RIGHT"],
+    "that's wrong": ["WRONG"],
+    "i think so": ["THINK", "I", "YES"],
+    "i don't think so": ["THINK", "I", "NOT"],
+    "it doesn't matter": ["MATTER", "NOT"],
+    "never mind": ["NEVER-MIND"],
+    "i'm busy": ["BUSY", "I"],
+    "i'm tired": ["TIRED", "I"],
+    "i'm hungry": ["HUNGRY", "I"],
+    "i'm sick": ["SICK", "I"],
+    "i feel good": ["FEEL", "GOOD", "I"],
+    "i feel bad": ["FEEL", "BAD", "I"],
+    "see you later": ["SEE", "YOU", "LATER"],
+    "see you tomorrow": ["TOMORROW", "SEE", "YOU"],
+    "take care": ["TAKE-CARE"],
+    "have a good day": ["DAY", "GOOD", "HAVE"],
+    "i'll be right back": ["I", "BACK", "SOON"],
+    "what happened": ["HAPPEN", "WHAT"],
+    "are you okay": ["YOU", "OKAY"],
+    "i'm running late": ["LATE", "I"],
+    "i'm on my way": ["I", "COME", "NOW"],
+    "call me later": ["LATER", "CALL", "I"],
+    "i'll call you back": ["I", "CALL-YOU", "BACK", "WILL"],
+    "can you hear me": ["HEAR", "YOU", "CAN"],
+    "i can't hear you": ["HEAR", "I", "NOT"],
+    "speak slower please": ["SLOW", "PLEASE"],
+    "the connection is bad": ["CONNECTION", "BAD"],
+    "i have to go": ["I", "GO", "MUST"],
+    "talk to you later": ["LATER", "TALK", "WE"],
+    "what are you doing": ["YOU", "DO", "WHAT"],
+    "where are you going": ["YOU", "GO", "WHERE"],
+    "when are you coming": ["YOU", "COME", "WHEN"],
+    "i'm coming": ["COME", "I"],
+    "i'm leaving": ["LEAVE", "I"],
+    "i'm home": ["HOME", "I"],
+    "i'm at work": ["WORK", "I"],
+    "i'm at school": ["SCHOOL", "I"],
+    "let me know": ["TELL-ME", "PLEASE"],
+    "i miss you": ["MISS", "YOU", "I"],
+    "be careful": ["CAREFUL"],
+    "don't worry": ["WORRY", "NOT"],
+    "it's okay": ["OKAY"],
+    "no problem": ["NO-PROBLEM"],
+    "of course": ["OF-COURSE"],
+    "i forgot": ["FORGET", "I"],
+    "i remember": ["REMEMBER", "I"]
+  },
+  "patterns": [
+    {
+      "pattern": "i gave {PERSON} the {OBJECT}",
+      "gloss": ["{OBJECT}", "I", "GIVE-{PERSON}"],
+      "example": "i gave you the book → BOOK I GIVE-YOU"
+    },
+    {
+      "pattern": "can you {VERB} {OBJECT}",
+      "gloss": ["{OBJECT}", "{VERB}", "YOU", "CAN"],
+      "example": "can you bring the food → FOOD BRING YOU CAN"
+    },
+    {
+      "pattern": "i want to {VERB}",
+      "gloss": ["{VERB}", "I", "WANT"],
+      "example": "i want to eat → EAT I WANT"
+    },
+    {
+      "pattern": "i need to {VERB}",
+      "gloss": ["{VERB}", "I", "NEED"],
+      "example": "i need to go → GO I NEED"
+    },
+    {
+      "pattern": "i like {OBJECT}",
+      "gloss": ["{OBJECT}", "I", "LIKE"],
+      "example": "i like coffee → COFFEE I LIKE"
+    },
+    {
+      "pattern": "i don't like {OBJECT}",
+      "gloss": ["{OBJECT}", "I", "LIKE", "NOT"],
+      "example": "i don't like rain → RAIN I LIKE NOT"
+    },
+    {
+      "pattern": "do you have {OBJECT}",
+      "gloss": ["{OBJECT}", "HAVE", "YOU"],
+      "example": "do you have time → TIME HAVE YOU"
+    },
+    {
+      "pattern": "i have {OBJECT}",
+      "gloss": ["{OBJECT}", "HAVE", "I"],
+      "example": "i have a car → CAR HAVE I"
+    },
+    {
+      "pattern": "there is {OBJECT}",
+      "gloss": ["{OBJECT}", "THERE"],
+      "example": "there is food → FOOD THERE"
+    },
+    {
+      "pattern": "i told {PERSON} that {CONTENT}",
+      "gloss": ["{PERSON}", "I", "TELL-{PERSON}", "{CONTENT}"],
+      "example": "i told you that → YOU I TELL-YOU THAT"
+    },
+    {
+      "pattern": "please {VERB}",
+      "gloss": ["PLEASE", "{VERB}"],
+      "example": "please wait → PLEASE WAIT"
+    },
+    {
+      "pattern": "don't {VERB}",
+      "gloss": ["{VERB}", "NOT"],
+      "example": "don't go → GO NOT"
+    },
+    {
+      "pattern": "i will {VERB}",
+      "gloss": ["FUTURE", "I", "{VERB}"],
+      "example": "i will come → FUTURE I COME"
+    },
+    {
+      "pattern": "i was {VERB}",
+      "gloss": ["PAST", "I", "{VERB}"],
+      "example": "i was working → PAST I WORK"
+    },
+    {
+      "pattern": "how much does {OBJECT} cost",
+      "gloss": ["{OBJECT}", "COST", "HOW-MUCH"],
+      "example": "how much does it cost → IT COST HOW-MUCH"
+    },
+    {
+      "pattern": "where is {OBJECT}",
+      "gloss": ["{OBJECT}", "WHERE"],
+      "example": "where is the store → STORE WHERE"
+    },
+    {
+      "pattern": "when is {EVENT}",
+      "gloss": ["{EVENT}", "WHEN"],
+      "example": "when is the meeting → MEETING WHEN"
+    }
+  ]
+}

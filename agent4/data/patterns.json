@@ -1,0 +1,1514 @@
+[
+  {
+    "pattern": "How many {NOUN} do you have",
+    "asl_template": "{NOUN} YOU HAVE HOW-MANY"
+  },
+  {
+    "pattern": "What is your {NOUN}",
+    "asl_template": "YOUR {NOUN} WHAT"
+  },
+  {
+    "pattern": "Where is the {NOUN}",
+    "asl_template": "{NOUN} WHERE"
+  },
+  {
+    "pattern": "Is that your {NOUN}",
+    "asl_template": "THAT YOUR {NOUN}"
+  },
+  {
+    "pattern": "When did you {VERB}",
+    "asl_template": "YOU {VERB} WHEN"
+  },
+  {
+    "pattern": "Who is {NOUN}",
+    "asl_template": "{NOUN} WHO"
+  },
+  {
+    "pattern": "How do you {VERB}",
+    "asl_template": "YOU {VERB} HOW"
+  },
+  {
+    "pattern": "What do you {VERB}",
+    "asl_template": "YOU {VERB} WHAT"
+  },
+  {
+    "pattern": "Where do you {VERB}",
+    "asl_template": "YOU {VERB} WHERE"
+  },
+  {
+    "pattern": "Why do you {VERB}",
+    "asl_template": "YOU {VERB} WHY"
+  },
+  {
+    "pattern": "Why did you {VERB}",
+    "asl_template": "YOU {VERB} WHY"
+  },
+  {
+    "pattern": "Do you have {NOUN}",
+    "asl_template": "{NOUN} YOU HAVE"
+  },
+  {
+    "pattern": "Do you want {NOUN}",
+    "asl_template": "{NOUN} YOU WANT"
+  },
+  {
+    "pattern": "Do you like {NOUN}",
+    "asl_template": "{NOUN} YOU LIKE"
+  },
+  {
+    "pattern": "Do you know {NOUN}",
+    "asl_template": "{NOUN} YOU KNOW"
+  },
+  {
+    "pattern": "Do you remember {NOUN}",
+    "asl_template": "{NOUN} YOU REMEMBER"
+  },
+  {
+    "pattern": "Do you {VERB}",
+    "asl_template": "YOU {VERB}"
+  },
+  {
+    "pattern": "Did you {VERB}",
+    "asl_template": "YOU {VERB} FINISH"
+  },
+  {
+    "pattern": "Have you {VERB}",
+    "asl_template": "YOU {VERB} FINISH"
+  },
+  {
+    "pattern": "Will you {VERB}",
+    "asl_template": "YOU {VERB} WILL"
+  },
+  {
+    "pattern": "Can you help me with {NOUN}",
+    "asl_template": "{NOUN} HELP ME CAN YOU"
+  },
+  {
+    "pattern": "Can you help me",
+    "asl_template": "YOU HELP ME CAN"
+  },
+  {
+    "pattern": "Can you repeat that",
+    "asl_template": "AGAIN PLEASE"
+  },
+  {
+    "pattern": "Can you show me {NOUN}",
+    "asl_template": "{NOUN} SHOW ME CAN YOU"
+  },
+  {
+    "pattern": "Can you {VERB}",
+    "asl_template": "YOU {VERB} CAN"
+  },
+  {
+    "pattern": "Are you {ADJECTIVE}",
+    "asl_template": "YOU {ADJECTIVE}"
+  },
+  {
+    "pattern": "What happened to {NOUN}",
+    "asl_template": "{NOUN} HAPPEN WHAT"
+  },
+  {
+    "pattern": "What does {NOUN} mean",
+    "asl_template": "{NOUN} MEAN WHAT"
+  },
+  {
+    "pattern": "How much does {NOUN} cost",
+    "asl_template": "{NOUN} COST HOW-MUCH"
+  },
+  {
+    "pattern": "How long will it take",
+    "asl_template": "TIME HOW-LONG"
+  },
+  {
+    "pattern": "What color is {NOUN}",
+    "asl_template": "{NOUN} COLOR WHAT"
+  },
+  {
+    "pattern": "I gave {PERSON} the {OBJECT}",
+    "asl_template": "{OBJECT} I GIVE-{PERSON}"
+  },
+  {
+    "pattern": "I told {PERSON} about {TOPIC}",
+    "asl_template": "{TOPIC} I TELL-{PERSON}"
+  },
+  {
+    "pattern": "I showed {PERSON} the {OBJECT}",
+    "asl_template": "{OBJECT} I SHOW-{PERSON}"
+  },
+  {
+    "pattern": "I asked {PERSON} about {TOPIC}",
+    "asl_template": "{TOPIC} I ASK-{PERSON}"
+  },
+  {
+    "pattern": "I sent {PERSON} the {OBJECT}",
+    "asl_template": "{OBJECT} I SEND-{PERSON}"
+  },
+  {
+    "pattern": "{PERSON} is my {RELATION}",
+    "asl_template": "{PERSON} MY {RELATION}"
+  },
+  {
+    "pattern": "{PERSON} gave me the {OBJECT}",
+    "asl_template": "{OBJECT} {PERSON} GIVE-ME"
+  },
+  {
+    "pattern": "{PERSON} told me about {TOPIC}",
+    "asl_template": "{TOPIC} {PERSON} TELL-ME"
+  },
+  {
+    "pattern": "My name is {NAME}",
+    "asl_template": "MY NAME {NAME}"
+  },
+  {
+    "pattern": "My favorite {NOUN} is {NAME}",
+    "asl_template": "MY FAVORITE {NOUN} {NAME}"
+  },
+  {
+    "pattern": "The {NOUN} is {ADJECTIVE}",
+    "asl_template": "{NOUN} {ADJECTIVE}"
+  },
+  {
+    "pattern": "I want to go to {PLACE}",
+    "asl_template": "{PLACE} I WANT GO"
+  },
+  {
+    "pattern": "I want to {VERB}",
+    "asl_template": "{VERB} I WANT"
+  },
+  {
+    "pattern": "I need to go to {PLACE}",
+    "asl_template": "{PLACE} I NEED GO"
+  },
+  {
+    "pattern": "I need to {VERB}",
+    "asl_template": "{VERB} I NEED"
+  },
+  {
+    "pattern": "I like to {VERB}",
+    "asl_template": "{VERB} I LIKE"
+  },
+  {
+    "pattern": "I used to {VERB}",
+    "asl_template": "BEFORE {VERB} I"
+  },
+  {
+    "pattern": "I know how to {VERB}",
+    "asl_template": "{VERB} I KNOW HOW"
+  },
+  {
+    "pattern": "I learned to {VERB}",
+    "asl_template": "{VERB} I LEARN FINISH"
+  },
+  {
+    "pattern": "I want {OBJECT}",
+    "asl_template": "{OBJECT} I WANT"
+  },
+  {
+    "pattern": "I need {OBJECT}",
+    "asl_template": "{OBJECT} I NEED"
+  },
+  {
+    "pattern": "I like {OBJECT}",
+    "asl_template": "{OBJECT} I LIKE"
+  },
+  {
+    "pattern": "I love {OBJECT}",
+    "asl_template": "{OBJECT} I LOVE"
+  },
+  {
+    "pattern": "I have {OBJECT}",
+    "asl_template": "{OBJECT} I HAVE"
+  },
+  {
+    "pattern": "I prefer {OBJECT}",
+    "asl_template": "{OBJECT} I PREFER"
+  },
+  {
+    "pattern": "I remember {NOUN}",
+    "asl_template": "{NOUN} I REMEMBER"
+  },
+  {
+    "pattern": "I forgot {NOUN}",
+    "asl_template": "{NOUN} I FORGET"
+  },
+  {
+    "pattern": "I am {ADJECTIVE}",
+    "asl_template": "{ADJECTIVE} I"
+  },
+  {
+    "pattern": "I feel {ADJECTIVE}",
+    "asl_template": "{ADJECTIVE} I FEEL"
+  },
+  {
+    "pattern": "{PERSON} is {ADJECTIVE}",
+    "asl_template": "{PERSON} {ADJECTIVE}"
+  },
+  {
+    "pattern": "{PERSON} looks {ADJECTIVE}",
+    "asl_template": "{PERSON} LOOK {ADJECTIVE}"
+  },
+  {
+    "pattern": "I think {PERSON} is {ADJECTIVE}",
+    "asl_template": "{PERSON} {ADJECTIVE} I THINK"
+  },
+  {
+    "pattern": "I think you should {VERB}",
+    "asl_template": "{VERB} YOU SHOULD I THINK"
+  },
+  {
+    "pattern": "I hope you {VERB}",
+    "asl_template": "YOU {VERB} I HOPE"
+  },
+  {
+    "pattern": "I wish I could {VERB}",
+    "asl_template": "{VERB} I WISH"
+  },
+  {
+    "pattern": "I promise to {VERB}",
+    "asl_template": "{VERB} I PROMISE"
+  },
+  {
+    "pattern": "I decided to {VERB}",
+    "asl_template": "{VERB} I DECIDE"
+  },
+  {
+    "pattern": "I plan to {VERB}",
+    "asl_template": "{VERB} I PLAN"
+  },
+  {
+    "pattern": "I tried to {VERB}",
+    "asl_template": "{VERB} I TRY"
+  },
+  {
+    "pattern": "I started to {VERB}",
+    "asl_template": "{VERB} I START"
+  },
+  {
+    "pattern": "I finished {VERB}",
+    "asl_template": "{VERB} I FINISH"
+  },
+  {
+    "pattern": "I can not believe {PERSON} said that",
+    "asl_template": "{PERSON} SAY THAT BELIEVE I CAN'T"
+  },
+  {
+    "pattern": "I do not have enough {NOUN}",
+    "asl_template": "{NOUN} ENOUGH I HAVE NOT"
+  },
+  {
+    "pattern": "I do not have {OBJECT}",
+    "asl_template": "{OBJECT} I HAVE NOT"
+  },
+  {
+    "pattern": "I do not want {OBJECT}",
+    "asl_template": "{OBJECT} I WANT NOT"
+  },
+  {
+    "pattern": "I do not like {OBJECT}",
+    "asl_template": "{OBJECT} I LIKE NOT"
+  },
+  {
+    "pattern": "I do not know {NOUN}",
+    "asl_template": "{NOUN} I KNOW NOT"
+  },
+  {
+    "pattern": "I do not remember {NOUN}",
+    "asl_template": "{NOUN} I REMEMBER NOT"
+  },
+  {
+    "pattern": "I do not understand {NOUN}",
+    "asl_template": "{NOUN} UNDERSTAND I NOT"
+  },
+  {
+    "pattern": "I do not understand",
+    "asl_template": "UNDERSTAND I NOT"
+  },
+  {
+    "pattern": "I do not care about {NOUN}",
+    "asl_template": "{NOUN} I CARE NOT"
+  },
+  {
+    "pattern": "I do not think so",
+    "asl_template": "THINK I NOT"
+  },
+  {
+    "pattern": "I do not agree",
+    "asl_template": "AGREE I NOT"
+  },
+  {
+    "pattern": "I do not {VERB}",
+    "asl_template": "{VERB} I NOT"
+  },
+  {
+    "pattern": "I can not {VERB}",
+    "asl_template": "{VERB} I CAN'T"
+  },
+  {
+    "pattern": "I will not {VERB}",
+    "asl_template": "{VERB} I WILL NOT"
+  },
+  {
+    "pattern": "{PERSON} does not {VERB}",
+    "asl_template": "{PERSON} {VERB} NOT"
+  },
+  {
+    "pattern": "{PERSON} did not {VERB}",
+    "asl_template": "{PERSON} {VERB} NOT"
+  },
+  {
+    "pattern": "I went to {PLACE}",
+    "asl_template": "{PLACE} I GO PAST"
+  },
+  {
+    "pattern": "I came from {PLACE}",
+    "asl_template": "{PLACE} I COME-FROM"
+  },
+  {
+    "pattern": "I saw {NOUN}",
+    "asl_template": "{NOUN} I SEE FINISH"
+  },
+  {
+    "pattern": "I met {PERSON} at {PLACE}",
+    "asl_template": "{PLACE} {PERSON} I MEET"
+  },
+  {
+    "pattern": "{PERSON} said {PHRASE}",
+    "asl_template": "{PERSON} SAY {PHRASE}"
+  },
+  {
+    "pattern": "I already {VERB}",
+    "asl_template": "{VERB} I FINISH"
+  },
+  {
+    "pattern": "{PERSON} already {VERB}",
+    "asl_template": "{PERSON} {VERB} FINISH"
+  },
+  {
+    "pattern": "I have been to {PLACE}",
+    "asl_template": "{PLACE} I GO FINISH"
+  },
+  {
+    "pattern": "I have never been to {PLACE}",
+    "asl_template": "{PLACE} I GO NEVER"
+  },
+  {
+    "pattern": "Yesterday I {VERB}",
+    "asl_template": "YESTERDAY I {VERB}"
+  },
+  {
+    "pattern": "Tomorrow I will {VERB}",
+    "asl_template": "TOMORROW I {VERB}"
+  },
+  {
+    "pattern": "I will {VERB} tomorrow",
+    "asl_template": "TOMORROW I WILL {VERB}"
+  },
+  {
+    "pattern": "Last week I {VERB}",
+    "asl_template": "LAST-WEEK I {VERB}"
+  },
+  {
+    "pattern": "Next week I will {VERB}",
+    "asl_template": "NEXT-WEEK I {VERB}"
+  },
+  {
+    "pattern": "Every day I {VERB}",
+    "asl_template": "EVERY-DAY I {VERB}"
+  },
+  {
+    "pattern": "Sometimes I {VERB}",
+    "asl_template": "SOMETIMES I {VERB}"
+  },
+  {
+    "pattern": "I always {VERB}",
+    "asl_template": "ALWAYS I {VERB}"
+  },
+  {
+    "pattern": "I never {VERB}",
+    "asl_template": "{VERB} I NEVER"
+  },
+  {
+    "pattern": "I am at {PLACE}",
+    "asl_template": "AT {PLACE} I"
+  },
+  {
+    "pattern": "I am going to {PLACE}",
+    "asl_template": "{PLACE} GO I"
+  },
+  {
+    "pattern": "I live in {PLACE}",
+    "asl_template": "I LIVE {PLACE}"
+  },
+  {
+    "pattern": "I work at {PLACE}",
+    "asl_template": "AT {PLACE} I WORK"
+  },
+  {
+    "pattern": "{PERSON} lives in {PLACE}",
+    "asl_template": "{PERSON} {PLACE} LIVE"
+  },
+  {
+    "pattern": "It is near {PLACE}",
+    "asl_template": "{PLACE} NEAR"
+  },
+  {
+    "pattern": "It is far from {PLACE}",
+    "asl_template": "{PLACE} FAR"
+  },
+  {
+    "pattern": "I am hungry",
+    "asl_template": "HUNGRY I"
+  },
+  {
+    "pattern": "I am thirsty",
+    "asl_template": "THIRSTY I"
+  },
+  {
+    "pattern": "I am tired",
+    "asl_template": "TIRED I"
+  },
+  {
+    "pattern": "I am sick",
+    "asl_template": "SICK I"
+  },
+  {
+    "pattern": "I am happy",
+    "asl_template": "HAPPY I"
+  },
+  {
+    "pattern": "I am sad",
+    "asl_template": "SAD I"
+  },
+  {
+    "pattern": "I am angry",
+    "asl_template": "I ANGRY"
+  },
+  {
+    "pattern": "I am scared",
+    "asl_template": "I SCARED"
+  },
+  {
+    "pattern": "I am excited",
+    "asl_template": "I EXCITED"
+  },
+  {
+    "pattern": "I am nervous",
+    "asl_template": "I NERVOUS"
+  },
+  {
+    "pattern": "I am confused",
+    "asl_template": "I CONFUSED"
+  },
+  {
+    "pattern": "I am worried about {NOUN}",
+    "asl_template": "{NOUN} I WORRIED"
+  },
+  {
+    "pattern": "I am proud of {PERSON}",
+    "asl_template": "{PERSON} I PROUD"
+  },
+  {
+    "pattern": "If you want I can {VERB}",
+    "asl_template": "YOU WANT I {VERB} CAN"
+  },
+  {
+    "pattern": "If you need help with {NOUN}",
+    "asl_template": "{NOUN} HELP YOU NEED IF"
+  },
+  {
+    "pattern": "Maybe we should {VERB}",
+    "asl_template": "MAYBE {VERB} WE SHOULD"
+  },
+  {
+    "pattern": "We should {VERB}",
+    "asl_template": "{VERB} WE SHOULD"
+  },
+  {
+    "pattern": "We can {VERB} together",
+    "asl_template": "TOGETHER {VERB} WE CAN"
+  },
+  {
+    "pattern": "Let us {VERB}",
+    "asl_template": "{VERB} WE"
+  },
+  {
+    "pattern": "I agree with {PERSON}",
+    "asl_template": "{PERSON} I AGREE"
+  },
+  {
+    "pattern": "That is a good {NOUN}",
+    "asl_template": "{NOUN} GOOD"
+  },
+  {
+    "pattern": "I have {NUMBER} {NOUN}",
+    "asl_template": "{NOUN} {NUMBER} I HAVE"
+  },
+  {
+    "pattern": "There are {NUMBER} {NOUN}",
+    "asl_template": "{NOUN} {NUMBER} THERE"
+  },
+  {
+    "pattern": "I am {NUMBER} years old",
+    "asl_template": "AGE {NUMBER} I"
+  },
+  {
+    "pattern": "{NOUN} is better than {OTHER}",
+    "asl_template": "{NOUN} {OTHER} COMPARE {NOUN} BETTER"
+  },
+  {
+    "pattern": "{NOUN} is the same as {OTHER}",
+    "asl_template": "{NOUN} {OTHER} SAME"
+  },
+  {
+    "pattern": "I am the same as {PERSON}",
+    "asl_template": "{PERSON} I SAME"
+  },
+  {
+    "pattern": "Please {VERB}",
+    "asl_template": "PLEASE {VERB}"
+  },
+  {
+    "pattern": "Please help me with {NOUN}",
+    "asl_template": "{NOUN} HELP ME PLEASE"
+  },
+  {
+    "pattern": "Please tell me about {NOUN}",
+    "asl_template": "{NOUN} TELL ME PLEASE"
+  },
+  {
+    "pattern": "Please wait for me",
+    "asl_template": "ME WAIT PLEASE"
+  },
+  {
+    "pattern": "Please give me {OBJECT}",
+    "asl_template": "{OBJECT} GIVE-ME PLEASE"
+  },
+  {
+    "pattern": "How are you",
+    "asl_template": "YOU HOW YOU"
+  },
+  {
+    "pattern": "What time is it",
+    "asl_template": "TIME WHAT"
+  },
+  {
+    "pattern": "Hello",
+    "asl_template": "HELLO"
+  },
+  {
+    "pattern": "Hi",
+    "asl_template": "HELLO"
+  },
+  {
+    "pattern": "Good morning",
+    "asl_template": "GOOD MORNING"
+  },
+  {
+    "pattern": "Good afternoon",
+    "asl_template": "GOOD AFTERNOON"
+  },
+  {
+    "pattern": "Good evening",
+    "asl_template": "GOOD EVENING"
+  },
+  {
+    "pattern": "Good night",
+    "asl_template": "GOOD NIGHT"
+  },
+  {
+    "pattern": "Goodbye",
+    "asl_template": "GOODBYE"
+  },
+  {
+    "pattern": "Thank you very much",
+    "asl_template": "THANK-YOU VERY-MUCH"
+  },
+  {
+    "pattern": "Thank you",
+    "asl_template": "THANK-YOU"
+  },
+  {
+    "pattern": "You are welcome",
+    "asl_template": "WELCOME"
+  },
+  {
+    "pattern": "I am sorry",
+    "asl_template": "SORRY"
+  },
+  {
+    "pattern": "Sorry",
+    "asl_template": "SORRY"
+  },
+  {
+    "pattern": "Yes",
+    "asl_template": "YES"
+  },
+  {
+    "pattern": "No",
+    "asl_template": "NO"
+  },
+  {
+    "pattern": "Maybe",
+    "asl_template": "MAYBE"
+  },
+  {
+    "pattern": "Of course",
+    "asl_template": "OF-COURSE"
+  },
+  {
+    "pattern": "I agree",
+    "asl_template": "AGREE I"
+  },
+  {
+    "pattern": "Nice to meet you",
+    "asl_template": "MEET YOU NICE"
+  },
+  {
+    "pattern": "Long time no see",
+    "asl_template": "LONG-TIME NO SEE"
+  },
+  {
+    "pattern": "I understand",
+    "asl_template": "UNDERSTAND I"
+  },
+  {
+    "pattern": "I see",
+    "asl_template": "I-SEE"
+  },
+  {
+    "pattern": "That is interesting",
+    "asl_template": "INTERESTING"
+  },
+  {
+    "pattern": "That is funny",
+    "asl_template": "FUNNY"
+  },
+  {
+    "pattern": "Really",
+    "asl_template": "REALLY"
+  },
+  {
+    "pattern": "Wait a moment",
+    "asl_template": "WAIT MOMENT"
+  },
+  {
+    "pattern": "Hold on",
+    "asl_template": "WAIT"
+  },
+  {
+    "pattern": "One moment",
+    "asl_template": "WAIT"
+  },
+  {
+    "pattern": "Excuse me",
+    "asl_template": "EXCUSE-ME"
+  },
+  {
+    "pattern": "I love you",
+    "asl_template": "I LOVE YOU"
+  },
+  {
+    "pattern": "I miss you",
+    "asl_template": "I MISS YOU"
+  },
+  {
+    "pattern": "See you later",
+    "asl_template": "LATER SEE-YOU"
+  },
+  {
+    "pattern": "See you tomorrow",
+    "asl_template": "TOMORROW SEE-YOU"
+  },
+  {
+    "pattern": "I have to go",
+    "asl_template": "GO I MUST"
+  },
+  {
+    "pattern": "I have to go now",
+    "asl_template": "NOW GO I MUST"
+  },
+  {
+    "pattern": "Take care",
+    "asl_template": "TAKE-CARE"
+  },
+  {
+    "pattern": "Be careful",
+    "asl_template": "CAREFUL"
+  },
+  {
+    "pattern": "No problem",
+    "asl_template": "NO PROBLEM"
+  },
+  {
+    "pattern": "It is okay",
+    "asl_template": "OKAY"
+  },
+  {
+    "pattern": "I do not mind",
+    "asl_template": "MIND I NOT"
+  },
+  {
+    "pattern": "That sounds good",
+    "asl_template": "GOOD"
+  },
+  {
+    "pattern": "I am fine",
+    "asl_template": "FINE I"
+  },
+  {
+    "pattern": "I am busy right now",
+    "asl_template": "NOW I BUSY"
+  },
+  {
+    "pattern": "I am free right now",
+    "asl_template": "NOW I FREE"
+  },
+  {
+    "pattern": "I will be there",
+    "asl_template": "THERE I WILL"
+  },
+  {
+    "pattern": "I will call you back",
+    "asl_template": "LATER I CALL YOU"
+  },
+  {
+    "pattern": "The weather is nice today",
+    "asl_template": "TODAY WEATHER NICE"
+  },
+  {
+    "pattern": "The weather is nice",
+    "asl_template": "WEATHER NICE"
+  },
+  {
+    "pattern": "Let us talk",
+    "asl_template": "TALK WE"
+  },
+  {
+    "pattern": "What do you think",
+    "asl_template": "YOU THINK WHAT"
+  },
+  {
+    "pattern": "I have no idea",
+    "asl_template": "I KNOW NOT"
+  },
+  {
+    "pattern": "That is right",
+    "asl_template": "RIGHT"
+  },
+  {
+    "pattern": "That is wrong",
+    "asl_template": "WRONG"
+  },
+  {
+    "pattern": "I was wrong",
+    "asl_template": "WRONG I"
+  },
+  {
+    "pattern": "You are right",
+    "asl_template": "RIGHT YOU"
+  },
+  {
+    "pattern": "It does not matter",
+    "asl_template": "MATTER NOT"
+  },
+  {
+    "pattern": "Never mind",
+    "asl_template": "NEVER-MIND"
+  },
+  {
+    "pattern": "Congratulations",
+    "asl_template": "CONGRATULATIONS"
+  },
+  {
+    "pattern": "Happy birthday",
+    "asl_template": "HAPPY BIRTHDAY"
+  },
+  {
+    "pattern": "are you hungry",
+    "asl_template": "HUNGRY YOU"
+  },
+  {
+    "pattern": "are you okay",
+    "asl_template": "YOU OKAY"
+  },
+  {
+    "pattern": "bye",
+    "asl_template": "GOODBYE"
+  },
+  {
+    "pattern": "call an ambulance",
+    "asl_template": "AMBULANCE CALL"
+  },
+  {
+    "pattern": "call the police",
+    "asl_template": "POLICE CALL"
+  },
+  {
+    "pattern": "can i have {THING}",
+    "asl_template": "{THING} I CAN HAVE"
+  },
+  {
+    "pattern": "can i order {FOOD}",
+    "asl_template": "{FOOD} I ORDER CAN"
+  },
+  {
+    "pattern": "can i pay with card",
+    "asl_template": "CARD PAY I CAN"
+  },
+  {
+    "pattern": "can we reschedule the {EVENT}",
+    "asl_template": "{EVENT} RESCHEDULE CAN WE"
+  },
+  {
+    "pattern": "can you give me {THING}",
+    "asl_template": "{THING} GIVE-ME YOU CAN"
+  },
+  {
+    "pattern": "can you show me the way to {PLACE}",
+    "asl_template": "{PLACE} WAY SHOW-ME YOU CAN"
+  },
+  {
+    "pattern": "can you text me",
+    "asl_template": "TEXT ME YOU CAN"
+  },
+  {
+    "pattern": "can you type it",
+    "asl_template": "TYPE IT YOU CAN"
+  },
+  {
+    "pattern": "can you write it down",
+    "asl_template": "WRITE-DOWN YOU CAN"
+  },
+  {
+    "pattern": "do you have this in a different size",
+    "asl_template": "DIFFERENT SIZE THIS YOU HAVE"
+  },
+  {
+    "pattern": "do you have {FOOD}",
+    "asl_template": "{FOOD} YOU HAVE"
+  },
+  {
+    "pattern": "do you know sign language",
+    "asl_template": "SIGN-LANGUAGE YOU KNOW"
+  },
+  {
+    "pattern": "do you take cash",
+    "asl_template": "CASH YOU TAKE"
+  },
+  {
+    "pattern": "do you understand",
+    "asl_template": "YOU UNDERSTAND"
+  },
+  {
+    "pattern": "do you want to {VERB}",
+    "asl_template": "YOU WANT {VERB}"
+  },
+  {
+    "pattern": "do you want {THING}",
+    "asl_template": "{THING} YOU WANT"
+  },
+  {
+    "pattern": "does this bus go to {PLACE}",
+    "asl_template": "{PLACE} THIS BUS GO"
+  },
+  {
+    "pattern": "emergency",
+    "asl_template": "EMERGENCY"
+  },
+  {
+    "pattern": "go straight",
+    "asl_template": "GO-STRAIGHT"
+  },
+  {
+    "pattern": "have a good day",
+    "asl_template": "YOUR DAY GOOD"
+  },
+  {
+    "pattern": "have a good night",
+    "asl_template": "YOUR NIGHT GOOD"
+  },
+  {
+    "pattern": "he is {ADJECTIVE}",
+    "asl_template": "{ADJECTIVE} HE"
+  },
+  {
+    "pattern": "help",
+    "asl_template": "HELP"
+  },
+  {
+    "pattern": "how are you doing",
+    "asl_template": "YOU HOW YOU"
+  },
+  {
+    "pattern": "how do i get to {PLACE}",
+    "asl_template": "{PLACE} HOW GET"
+  },
+  {
+    "pattern": "how far is {PLACE}",
+    "asl_template": "{PLACE} FAR HOW"
+  },
+  {
+    "pattern": "how is your {FAMILY_MEMBER}",
+    "asl_template": "YOUR {FAMILY_MEMBER} HOW"
+  },
+  {
+    "pattern": "how many {THING} do you have",
+    "asl_template": "YOU HAVE {THING} HOW-MANY"
+  },
+  {
+    "pattern": "how much does {THING} cost",
+    "asl_template": "{THING} COST HOW-MUCH"
+  },
+  {
+    "pattern": "how much is this",
+    "asl_template": "THIS COST HOW-MUCH"
+  },
+  {
+    "pattern": "how old are you",
+    "asl_template": "YOUR AGE WHAT"
+  },
+  {
+    "pattern": "i am allergic to {THING}",
+    "asl_template": "{THING} ALLERGIC I"
+  },
+  {
+    "pattern": "i am busy",
+    "asl_template": "BUSY I"
+  },
+  {
+    "pattern": "i am deaf",
+    "asl_template": "DEAF I"
+  },
+  {
+    "pattern": "i am driving to {PLACE}",
+    "asl_template": "{PLACE} DRIVE I"
+  },
+  {
+    "pattern": "i am from {PLACE}",
+    "asl_template": "FROM {PLACE} I"
+  },
+  {
+    "pattern": "i am in pain",
+    "asl_template": "PAIN I"
+  },
+  {
+    "pattern": "i am late for {EVENT}",
+    "asl_template": "LATE {EVENT} I"
+  },
+  {
+    "pattern": "i am lost",
+    "asl_template": "LOST I"
+  },
+  {
+    "pattern": "i am married",
+    "asl_template": "MARRIED I"
+  },
+  {
+    "pattern": "i am not married",
+    "asl_template": "MARRIED I NOT"
+  },
+  {
+    "pattern": "i am not {ADJECTIVE}",
+    "asl_template": "{ADJECTIVE} I NOT"
+  },
+  {
+    "pattern": "i am vegetarian",
+    "asl_template": "VEGETARIAN I"
+  },
+  {
+    "pattern": "i am waiting for you",
+    "asl_template": "YOU WAIT I"
+  },
+  {
+    "pattern": "i am {AGE} years old",
+    "asl_template": "MY AGE {AGE}"
+  },
+  {
+    "pattern": "i believe {CLAUSE}",
+    "asl_template": "{CLAUSE} I THINK"
+  },
+  {
+    "pattern": "i can {VERB}",
+    "asl_template": "{VERB} I CAN"
+  },
+  {
+    "pattern": "i can't {VERB}",
+    "asl_template": "{VERB} I CAN'T"
+  },
+  {
+    "pattern": "i did it already",
+    "asl_template": "ALREADY I DO"
+  },
+  {
+    "pattern": "i disagree",
+    "asl_template": "DISAGREE I"
+  },
+  {
+    "pattern": "i don't feel well",
+    "asl_template": "FEEL-WELL I NOT"
+  },
+  {
+    "pattern": "i don't have enough money",
+    "asl_template": "MONEY ENOUGH I NOT HAVE"
+  },
+  {
+    "pattern": "i don't know",
+    "asl_template": "KNOW I NOT"
+  },
+  {
+    "pattern": "i don't like {FOOD}",
+    "asl_template": "{FOOD} I LIKE NOT"
+  },
+  {
+    "pattern": "i don't understand",
+    "asl_template": "UNDERSTAND I NOT"
+  },
+  {
+    "pattern": "i don't {VERB}",
+    "asl_template": "{VERB} I NOT"
+  },
+  {
+    "pattern": "i found it",
+    "asl_template": "FIND I"
+  },
+  {
+    "pattern": "i gave you the {OBJECT}",
+    "asl_template": "{OBJECT} I GIVE-YOU"
+  },
+  {
+    "pattern": "i have a meeting at {TIME}",
+    "asl_template": "{TIME} MEETING I HAVE"
+  },
+  {
+    "pattern": "i have a question",
+    "asl_template": "QUESTION I HAVE"
+  },
+  {
+    "pattern": "i have a {FAMILY_MEMBER}",
+    "asl_template": "{FAMILY_MEMBER} I HAVE"
+  },
+  {
+    "pattern": "i have been waiting for {DURATION}",
+    "asl_template": "{DURATION} I WAIT"
+  },
+  {
+    "pattern": "i have {CONDITION}",
+    "asl_template": "{CONDITION} I HAVE"
+  },
+  {
+    "pattern": "i have {NUMBER} children",
+    "asl_template": "I HAVE CHILDREN {NUMBER}"
+  },
+  {
+    "pattern": "i just {VERB}ed",
+    "asl_template": "JUST I {VERB}"
+  },
+  {
+    "pattern": "i know {CLAUSE}",
+    "asl_template": "{CLAUSE} I KNOW"
+  },
+  {
+    "pattern": "i like {FOOD}",
+    "asl_template": "{FOOD} I LIKE"
+  },
+  {
+    "pattern": "i lost my {THING}",
+    "asl_template": "MY {THING} LOSE I"
+  },
+  {
+    "pattern": "i miss my {FAMILY_MEMBER}",
+    "asl_template": "MY {FAMILY_MEMBER} MISS I"
+  },
+  {
+    "pattern": "i missed the bus",
+    "asl_template": "BUS MISS I"
+  },
+  {
+    "pattern": "i need a doctor",
+    "asl_template": "DOCTOR I NEED"
+  },
+  {
+    "pattern": "i need a taxi",
+    "asl_template": "TAXI I NEED"
+  },
+  {
+    "pattern": "i need help",
+    "asl_template": "HELP I NEED"
+  },
+  {
+    "pattern": "i need my medicine",
+    "asl_template": "MY MEDICINE I NEED"
+  },
+  {
+    "pattern": "i need to finish {TASK} by {TIME}",
+    "asl_template": "{TIME} {TASK} FINISH I NEED"
+  },
+  {
+    "pattern": "i need {THING}",
+    "asl_template": "{THING} I NEED"
+  },
+  {
+    "pattern": "i take medication for {CONDITION}",
+    "asl_template": "{CONDITION} MEDICINE I TAKE"
+  },
+  {
+    "pattern": "i think {CLAUSE}",
+    "asl_template": "{CLAUSE} I THINK"
+  },
+  {
+    "pattern": "i use sign language",
+    "asl_template": "SIGN-LANGUAGE I USE"
+  },
+  {
+    "pattern": "i want to buy {THING}",
+    "asl_template": "{THING} BUY I WANT"
+  },
+  {
+    "pattern": "i want to return this",
+    "asl_template": "THIS RETURN I WANT"
+  },
+  {
+    "pattern": "i want water",
+    "asl_template": "WATER I WANT"
+  },
+  {
+    "pattern": "i want {THING}",
+    "asl_template": "{THING} I WANT"
+  },
+  {
+    "pattern": "i will call you",
+    "asl_template": "CALL YOU I WILL"
+  },
+  {
+    "pattern": "i will meet you at {PLACE}",
+    "asl_template": "{PLACE} MEET YOU I WILL"
+  },
+  {
+    "pattern": "i will {VERB}",
+    "asl_template": "WILL I {VERB}"
+  },
+  {
+    "pattern": "i will {VERB} later",
+    "asl_template": "LATER I WILL {VERB}"
+  },
+  {
+    "pattern": "i work as a {JOB}",
+    "asl_template": "MY WORK {JOB}"
+  },
+  {
+    "pattern": "i would like {THING}",
+    "asl_template": "{THING} I WANT"
+  },
+  {
+    "pattern": "i {VERB}ed yesterday",
+    "asl_template": "YESTERDAY I {VERB}"
+  },
+  {
+    "pattern": "i'll be right back",
+    "asl_template": "RIGHT-BACK I"
+  },
+  {
+    "pattern": "i'll do it now",
+    "asl_template": "NOW I DO"
+  },
+  {
+    "pattern": "i'm going to {VERB}",
+    "asl_template": "FUTURE I {VERB}"
+  },
+  {
+    "pattern": "i'm not sure",
+    "asl_template": "SURE I NOT"
+  },
+  {
+    "pattern": "i'm sorry",
+    "asl_template": "SORRY I"
+  },
+  {
+    "pattern": "in a few minutes",
+    "asl_template": "FEW-MINUTES"
+  },
+  {
+    "pattern": "in my opinion {CLAUSE}",
+    "asl_template": "MY OPINION {CLAUSE}"
+  },
+  {
+    "pattern": "it is cold",
+    "asl_template": "COLD"
+  },
+  {
+    "pattern": "it is hot",
+    "asl_template": "HOT"
+  },
+  {
+    "pattern": "it is raining",
+    "asl_template": "RAIN"
+  },
+  {
+    "pattern": "it is snowing",
+    "asl_template": "SNOW"
+  },
+  {
+    "pattern": "it is windy",
+    "asl_template": "WIND"
+  },
+  {
+    "pattern": "it is {ADJECTIVE} outside",
+    "asl_template": "OUTSIDE {ADJECTIVE}"
+  },
+  {
+    "pattern": "it is {TIME} o'clock",
+    "asl_template": "TIME {TIME}"
+  },
+  {
+    "pattern": "it will take {DURATION}",
+    "asl_template": "{DURATION} TAKE-TIME"
+  },
+  {
+    "pattern": "it's good to see you",
+    "asl_template": "SEE YOU GOOD"
+  },
+  {
+    "pattern": "keep the change",
+    "asl_template": "CHANGE KEEP"
+  },
+  {
+    "pattern": "let's go to {PLACE}",
+    "asl_template": "{PLACE} GO WE"
+  },
+  {
+    "pattern": "may i have {THING}",
+    "asl_template": "{THING} I CAN HAVE"
+  },
+  {
+    "pattern": "my phone number is {NUMBER}",
+    "asl_template": "MY PHONE-NUMBER {NUMBER}"
+  },
+  {
+    "pattern": "my {FAMILY_MEMBER} is {ADJECTIVE}",
+    "asl_template": "MY {FAMILY_MEMBER} {ADJECTIVE}"
+  },
+  {
+    "pattern": "my {FAMILY_MEMBER}'s name is {NAME}",
+    "asl_template": "MY {FAMILY_MEMBER} NAME {NAME}"
+  },
+  {
+    "pattern": "not yet",
+    "asl_template": "NOT-YET"
+  },
+  {
+    "pattern": "okay",
+    "asl_template": "OKAY"
+  },
+  {
+    "pattern": "please give me {THING}",
+    "asl_template": "PLEASE {THING} GIVE-ME"
+  },
+  {
+    "pattern": "please repeat that",
+    "asl_template": "REPEAT PLEASE"
+  },
+  {
+    "pattern": "please slow down",
+    "asl_template": "SLOW-DOWN PLEASE"
+  },
+  {
+    "pattern": "please speak slowly",
+    "asl_template": "SLOW SPEAK PLEASE"
+  },
+  {
+    "pattern": "pleased to meet you",
+    "asl_template": "MEET YOU NICE"
+  },
+  {
+    "pattern": "see you next week",
+    "asl_template": "NEXT-WEEK SEE-YOU"
+  },
+  {
+    "pattern": "see you soon",
+    "asl_template": "SOON SEE-YOU"
+  },
+  {
+    "pattern": "send me the {THING}",
+    "asl_template": "{THING} SEND-ME"
+  },
+  {
+    "pattern": "she is {ADJECTIVE}",
+    "asl_template": "{ADJECTIVE} SHE"
+  },
+  {
+    "pattern": "show me",
+    "asl_template": "SHOW ME"
+  },
+  {
+    "pattern": "stop",
+    "asl_template": "STOP"
+  },
+  {
+    "pattern": "tell me more",
+    "asl_template": "MORE TELL-ME"
+  },
+  {
+    "pattern": "thanks",
+    "asl_template": "THANK-YOU"
+  },
+  {
+    "pattern": "that doesn't make sense",
+    "asl_template": "THAT MAKE-SENSE NOT"
+  },
+  {
+    "pattern": "that is cheap",
+    "asl_template": "CHEAP THAT"
+  },
+  {
+    "pattern": "that is expensive",
+    "asl_template": "EXPENSIVE THAT"
+  },
+  {
+    "pattern": "that was delicious",
+    "asl_template": "DELICIOUS THAT"
+  },
+  {
+    "pattern": "that's interesting",
+    "asl_template": "INTERESTING THAT"
+  },
+  {
+    "pattern": "that's right",
+    "asl_template": "RIGHT THAT"
+  },
+  {
+    "pattern": "that's wrong",
+    "asl_template": "WRONG THAT"
+  },
+  {
+    "pattern": "the bill please",
+    "asl_template": "BILL PLEASE"
+  },
+  {
+    "pattern": "the food is {ADJECTIVE}",
+    "asl_template": "FOOD {ADJECTIVE}"
+  },
+  {
+    "pattern": "the internet is not working",
+    "asl_template": "INTERNET NOT WORK"
+  },
+  {
+    "pattern": "the traffic is bad",
+    "asl_template": "TRAFFIC BAD"
+  },
+  {
+    "pattern": "they are {ADJECTIVE}",
+    "asl_template": "{ADJECTIVE} THEY"
+  },
+  {
+    "pattern": "this hurts",
+    "asl_template": "HURT THIS"
+  },
+  {
+    "pattern": "this is my {FAMILY_MEMBER}",
+    "asl_template": "MY {FAMILY_MEMBER} THIS"
+  },
+  {
+    "pattern": "turn left",
+    "asl_template": "TURN-LEFT"
+  },
+  {
+    "pattern": "turn right",
+    "asl_template": "TURN-RIGHT"
+  },
+  {
+    "pattern": "welcome",
+    "asl_template": "WELCOME"
+  },
+  {
+    "pattern": "what are you doing",
+    "asl_template": "YOU DO WHAT"
+  },
+  {
+    "pattern": "what day is it today",
+    "asl_template": "TODAY DAY WHAT"
+  },
+  {
+    "pattern": "what do you do",
+    "asl_template": "YOUR WORK WHAT"
+  },
+  {
+    "pattern": "what do you want",
+    "asl_template": "YOU WANT WHAT"
+  },
+  {
+    "pattern": "what do you want to eat",
+    "asl_template": "EAT YOU WANT WHAT"
+  },
+  {
+    "pattern": "what happened",
+    "asl_template": "HAPPEN WHAT"
+  },
+  {
+    "pattern": "what is the weather today",
+    "asl_template": "TODAY WEATHER WHAT"
+  },
+  {
+    "pattern": "what is your email",
+    "asl_template": "YOUR EMAIL WHAT"
+  },
+  {
+    "pattern": "what is your name",
+    "asl_template": "YOUR NAME WHAT"
+  },
+  {
+    "pattern": "what time does {EVENT} start",
+    "asl_template": "{EVENT} START WHEN"
+  },
+  {
+    "pattern": "when is {EVENT}",
+    "asl_template": "{EVENT} WHEN"
+  },
+  {
+    "pattern": "where are you from",
+    "asl_template": "YOU FROM WHERE"
+  },
+  {
+    "pattern": "where is the bathroom",
+    "asl_template": "BATHROOM WHERE"
+  },
+  {
+    "pattern": "where is the bus stop",
+    "asl_template": "BUS-STOP WHERE"
+  },
+  {
+    "pattern": "where is the exit",
+    "asl_template": "EXIT WHERE"
+  },
+  {
+    "pattern": "where is the hospital",
+    "asl_template": "HOSPITAL WHERE"
+  },
+  {
+    "pattern": "where is the train station",
+    "asl_template": "TRAIN-STATION WHERE"
+  },
+  {
+    "pattern": "where is the {PLACE}",
+    "asl_template": "{PLACE} WHERE"
+  },
+  {
+    "pattern": "where is your {FAMILY_MEMBER}",
+    "asl_template": "YOUR {FAMILY_MEMBER} WHERE"
+  },
+  {
+    "pattern": "where is {THING}",
+    "asl_template": "{THING} WHERE"
+  },
+  {
+    "pattern": "who is {PERSON}",
+    "asl_template": "{PERSON} WHO"
+  },
+  {
+    "pattern": "why are you {VERB}ing",
+    "asl_template": "YOU {VERB} WHY"
+  },
+  {
+    "pattern": "you're welcome",
+    "asl_template": "WELCOME"
+  }
+]

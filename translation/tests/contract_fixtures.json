@@ -1,0 +1,235 @@
+{
+  "version": "1",
+  "description": "Contract test fixtures for SignBridge ASL translation pipeline. Used by both Python (tests/test_tier1.py) and Kotlin (translation unit tests).",
+  "fixtures": [
+    {
+      "id": "cf_001",
+      "description": "Basic give-object pattern with PERSON slot",
+      "input": "I gave you the book",
+      "expected_gloss": ["BOOK", "I", "GIVE-YOU"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1
+    },
+    {
+      "id": "cf_002",
+      "description": "WH-question with NOUN slot",
+      "input": "What is your name?",
+      "expected_gloss": ["YOUR", "NAME", "WHAT"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1
+    },
+    {
+      "id": "cf_003",
+      "description": "Negation pattern",
+      "input": "I don't understand",
+      "expected_gloss": ["UNDERSTAND", "I", "NOT"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1
+    },
+    {
+      "id": "cf_004",
+      "description": "Greeting — no slots",
+      "input": "Hello",
+      "expected_gloss": ["HELLO"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1
+    },
+    {
+      "id": "cf_005",
+      "description": "Farewell",
+      "input": "Goodbye",
+      "expected_gloss": ["GOODBYE"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1
+    },
+    {
+      "id": "cf_006",
+      "description": "Want pattern with THING slot",
+      "input": "I want coffee",
+      "expected_gloss": ["COFFEE", "I", "WANT"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1
+    },
+    {
+      "id": "cf_007",
+      "description": "Need pattern with THING slot",
+      "input": "I need help",
+      "expected_gloss": ["HELP", "I", "NEED"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1
+    },
+    {
+      "id": "cf_008",
+      "description": "Name introduction",
+      "input": "My name is Sarah",
+      "expected_gloss": ["MY", "NAME", "SARAH"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1
+    },
+    {
+      "id": "cf_009",
+      "description": "Feelings — happy",
+      "input": "I am happy",
+      "expected_gloss": ["HAPPY", "I"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1
+    },
+    {
+      "id": "cf_010",
+      "description": "Time question",
+      "input": "What time is it",
+      "expected_gloss": ["TIME", "WHAT"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1
+    },
+    {
+      "id": "cf_011",
+      "description": "Location question with PLACE slot",
+      "input": "Where is the bathroom",
+      "expected_gloss": ["BATHROOM", "WHERE"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1
+    },
+    {
+      "id": "cf_012",
+      "description": "Thank you",
+      "input": "Thank you",
+      "expected_gloss": ["THANK-YOU"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1
+    },
+    {
+      "id": "cf_013",
+      "description": "Sorry",
+      "input": "I'm sorry",
+      "expected_gloss": ["SORRY", "I"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1
+    },
+    {
+      "id": "cf_014",
+      "description": "Health emergency",
+      "input": "I need a doctor",
+      "expected_gloss": ["DOCTOR", "I", "NEED"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1
+    },
+    {
+      "id": "cf_015",
+      "description": "Location: going somewhere",
+      "input": "I am going to the store",
+      "expected_gloss": ["THE", "STORE", "GO", "I"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1,
+      "notes": "PLACE slot captures 'the store'; split produces two tokens"
+    },
+    {
+      "id": "cf_016",
+      "description": "Weather statement",
+      "input": "It is cold",
+      "expected_gloss": ["COLD"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1
+    },
+    {
+      "id": "cf_017",
+      "description": "Cost question with slot",
+      "input": "How much does this cost",
+      "expected_gloss": ["THIS", "COST", "HOW-MUCH"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1
+    },
+    {
+      "id": "cf_018",
+      "description": "Allergy with THING slot",
+      "input": "I am allergic to peanuts",
+      "expected_gloss": ["PEANUTS", "ALLERGIC", "I"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1
+    },
+    {
+      "id": "cf_019",
+      "description": "Identity — deaf",
+      "input": "I am deaf",
+      "expected_gloss": ["DEAF", "I"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1
+    },
+    {
+      "id": "cf_020",
+      "description": "Tier 2 expected: similar-but-not-exact pattern",
+      "input": "The weather looks nice today",
+      "expected_gloss_contains": ["WEATHER", "NICE"],
+      "expected_method": "vector_similarity",
+      "expected_confidence_min": 0.6,
+      "tier": 2,
+      "notes": "Matches 'the weather is nice' via vector similarity"
+    },
+    {
+      "id": "cf_021",
+      "description": "Fingerspelling: proper name not in dictionary",
+      "input": "My name is Zephyrine",
+      "expected_gloss": ["MY", "NAME", "ZEPHYRINE"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1,
+      "notes": "Pattern matches, ZEPHYRINE will be fingerspelled by SignDictionary"
+    },
+    {
+      "id": "cf_022",
+      "description": "Plural family member",
+      "input": "How is your mother",
+      "expected_gloss": ["YOUR", "MOTHER", "HOW"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1
+    },
+    {
+      "id": "cf_023",
+      "description": "Apology with punctuation",
+      "input": "I'm sorry.",
+      "expected_gloss": ["SORRY", "I"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1,
+      "notes": "Trailing punctuation stripped by normalizer"
+    },
+    {
+      "id": "cf_024",
+      "description": "Transport: bus stop",
+      "input": "Where is the bus stop",
+      "expected_gloss": ["BUS-STOP", "WHERE"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1
+    },
+    {
+      "id": "cf_025",
+      "description": "Can't action",
+      "input": "I can't come",
+      "expected_gloss": ["COME", "I", "CAN'T"],
+      "expected_method": "pattern_hash",
+      "expected_confidence_min": 0.9,
+      "tier": 1
+    }
+  ]
+}

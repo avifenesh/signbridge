@@ -1,0 +1,1586 @@
+{
+  "I": {
+    "sign_id": "i_me",
+    "gloss": "I",
+    "duration_ms": 300,
+    "category": "pronoun"
+  },
+  "ME": {
+    "sign_id": "i_me",
+    "gloss": "ME",
+    "duration_ms": 300,
+    "category": "pronoun"
+  },
+  "YOU": {
+    "sign_id": "you",
+    "gloss": "YOU",
+    "duration_ms": 300,
+    "category": "pronoun"
+  },
+  "HE": {
+    "sign_id": "he",
+    "gloss": "HE",
+    "duration_ms": 300,
+    "category": "pronoun"
+  },
+  "SHE": {
+    "sign_id": "she",
+    "gloss": "SHE",
+    "duration_ms": 300,
+    "category": "pronoun"
+  },
+  "WE": {
+    "sign_id": "we",
+    "gloss": "WE",
+    "duration_ms": 300,
+    "category": "pronoun"
+  },
+  "THEY": {
+    "sign_id": "they",
+    "gloss": "THEY",
+    "duration_ms": 300,
+    "category": "pronoun"
+  },
+  "MY": {
+    "sign_id": "my",
+    "gloss": "MY",
+    "duration_ms": 300,
+    "category": "pronoun"
+  },
+  "YOUR": {
+    "sign_id": "your",
+    "gloss": "YOUR",
+    "duration_ms": 300,
+    "category": "pronoun"
+  },
+  "HIS": {
+    "sign_id": "his",
+    "gloss": "HIS",
+    "duration_ms": 300,
+    "category": "pronoun"
+  },
+  "HER": {
+    "sign_id": "her",
+    "gloss": "HER",
+    "duration_ms": 300,
+    "category": "pronoun"
+  },
+  "OUR": {
+    "sign_id": "our",
+    "gloss": "OUR",
+    "duration_ms": 300,
+    "category": "pronoun"
+  },
+  "THEIR": {
+    "sign_id": "their",
+    "gloss": "THEIR",
+    "duration_ms": 300,
+    "category": "pronoun"
+  },
+  "THAT": {
+    "sign_id": "that",
+    "gloss": "THAT",
+    "duration_ms": 300,
+    "category": "pronoun"
+  },
+  "WHAT": {
+    "sign_id": "what",
+    "gloss": "WHAT",
+    "duration_ms": 400,
+    "category": "question"
+  },
+  "WHERE": {
+    "sign_id": "where",
+    "gloss": "WHERE",
+    "duration_ms": 400,
+    "category": "question"
+  },
+  "WHEN": {
+    "sign_id": "when",
+    "gloss": "WHEN",
+    "duration_ms": 400,
+    "category": "question"
+  },
+  "WHO": {
+    "sign_id": "who",
+    "gloss": "WHO",
+    "duration_ms": 400,
+    "category": "question"
+  },
+  "HOW": {
+    "sign_id": "how",
+    "gloss": "HOW",
+    "duration_ms": 400,
+    "category": "question"
+  },
+  "WHY": {
+    "sign_id": "why",
+    "gloss": "WHY",
+    "duration_ms": 400,
+    "category": "question"
+  },
+  "HOW-MANY": {
+    "sign_id": "how_many",
+    "gloss": "HOW-MANY",
+    "duration_ms": 500,
+    "category": "question"
+  },
+  "WANT": {
+    "sign_id": "want",
+    "gloss": "WANT",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "NEED": {
+    "sign_id": "need",
+    "gloss": "NEED",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "LIKE": {
+    "sign_id": "like",
+    "gloss": "LIKE",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "LOVE": {
+    "sign_id": "love",
+    "gloss": "LOVE",
+    "duration_ms": 600,
+    "category": "verb"
+  },
+  "HAVE": {
+    "sign_id": "have",
+    "gloss": "HAVE",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "GIVE": {
+    "sign_id": "give",
+    "gloss": "GIVE",
+    "duration_ms": 600,
+    "category": "verb"
+  },
+  "GO": {
+    "sign_id": "go",
+    "gloss": "GO",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "COME": {
+    "sign_id": "come",
+    "gloss": "COME",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "SEE": {
+    "sign_id": "see",
+    "gloss": "SEE",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "KNOW": {
+    "sign_id": "know",
+    "gloss": "KNOW",
+    "duration_ms": 400,
+    "category": "verb"
+  },
+  "UNDERSTAND": {
+    "sign_id": "understand",
+    "gloss": "UNDERSTAND",
+    "duration_ms": 600,
+    "category": "verb"
+  },
+  "THINK": {
+    "sign_id": "think",
+    "gloss": "THINK",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "BELIEVE": {
+    "sign_id": "believe",
+    "gloss": "BELIEVE",
+    "duration_ms": 600,
+    "category": "verb"
+  },
+  "SAY": {
+    "sign_id": "say",
+    "gloss": "SAY",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "TELL": {
+    "sign_id": "tell",
+    "gloss": "TELL",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "ASK": {
+    "sign_id": "ask",
+    "gloss": "ASK",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "HELP": {
+    "sign_id": "help",
+    "gloss": "HELP",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "MAKE": {
+    "sign_id": "make",
+    "gloss": "MAKE",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "EAT": {
+    "sign_id": "eat",
+    "gloss": "EAT",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "DRINK": {
+    "sign_id": "drink",
+    "gloss": "DRINK",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "WORK": {
+    "sign_id": "work",
+    "gloss": "WORK",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "MEET": {
+    "sign_id": "meet",
+    "gloss": "MEET",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "CALL": {
+    "sign_id": "call",
+    "gloss": "CALL",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "WAIT": {
+    "sign_id": "wait",
+    "gloss": "WAIT",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "TALK": {
+    "sign_id": "talk",
+    "gloss": "TALK",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "FINISH": {
+    "sign_id": "finish",
+    "gloss": "FINISH",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "GIVE-YOU": {
+    "sign_id": "give_dir_you",
+    "gloss": "GIVE-YOU",
+    "duration_ms": 700,
+    "category": "verb_dir"
+  },
+  "GIVE-ME": {
+    "sign_id": "give_dir_me",
+    "gloss": "GIVE-ME",
+    "duration_ms": 700,
+    "category": "verb_dir"
+  },
+  "TELL-YOU": {
+    "sign_id": "tell_dir_you",
+    "gloss": "TELL-YOU",
+    "duration_ms": 700,
+    "category": "verb_dir"
+  },
+  "TELL-ME": {
+    "sign_id": "tell_dir_me",
+    "gloss": "TELL-ME",
+    "duration_ms": 700,
+    "category": "verb_dir"
+  },
+  "NAME": {
+    "sign_id": "name",
+    "gloss": "NAME",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "BOOK": {
+    "sign_id": "book",
+    "gloss": "BOOK",
+    "duration_ms": 600,
+    "category": "noun"
+  },
+  "HOUSE": {
+    "sign_id": "house",
+    "gloss": "HOUSE",
+    "duration_ms": 600,
+    "category": "noun"
+  },
+  "SCHOOL": {
+    "sign_id": "school",
+    "gloss": "SCHOOL",
+    "duration_ms": 600,
+    "category": "noun"
+  },
+  "WATER": {
+    "sign_id": "water",
+    "gloss": "WATER",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "FOOD": {
+    "sign_id": "food",
+    "gloss": "FOOD",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "FAMILY": {
+    "sign_id": "family",
+    "gloss": "FAMILY",
+    "duration_ms": 600,
+    "category": "noun"
+  },
+  "FRIEND": {
+    "sign_id": "friend",
+    "gloss": "FRIEND",
+    "duration_ms": 600,
+    "category": "noun"
+  },
+  "MOTHER": {
+    "sign_id": "mother",
+    "gloss": "MOTHER",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "FATHER": {
+    "sign_id": "father",
+    "gloss": "FATHER",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "TIME": {
+    "sign_id": "time",
+    "gloss": "TIME",
+    "duration_ms": 400,
+    "category": "noun"
+  },
+  "WEATHER": {
+    "sign_id": "weather",
+    "gloss": "WEATHER",
+    "duration_ms": 600,
+    "category": "noun"
+  },
+  "GOOD": {
+    "sign_id": "good",
+    "gloss": "GOOD",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "BAD": {
+    "sign_id": "bad",
+    "gloss": "BAD",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "NICE": {
+    "sign_id": "nice",
+    "gloss": "NICE",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "HAPPY": {
+    "sign_id": "happy",
+    "gloss": "HAPPY",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "SAD": {
+    "sign_id": "sad",
+    "gloss": "SAD",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "FINE": {
+    "sign_id": "fine",
+    "gloss": "FINE",
+    "duration_ms": 400,
+    "category": "adjective"
+  },
+  "BUSY": {
+    "sign_id": "busy",
+    "gloss": "BUSY",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "LATE": {
+    "sign_id": "late",
+    "gloss": "LATE",
+    "duration_ms": 400,
+    "category": "adjective"
+  },
+  "HELLO": {
+    "sign_id": "hello",
+    "gloss": "HELLO",
+    "duration_ms": 500,
+    "category": "greeting"
+  },
+  "GOODBYE": {
+    "sign_id": "goodbye",
+    "gloss": "GOODBYE",
+    "duration_ms": 600,
+    "category": "greeting"
+  },
+  "THANK-YOU": {
+    "sign_id": "thank_you",
+    "gloss": "THANK-YOU",
+    "duration_ms": 500,
+    "category": "greeting"
+  },
+  "PLEASE": {
+    "sign_id": "please",
+    "gloss": "PLEASE",
+    "duration_ms": 500,
+    "category": "greeting"
+  },
+  "SORRY": {
+    "sign_id": "sorry",
+    "gloss": "SORRY",
+    "duration_ms": 500,
+    "category": "greeting"
+  },
+  "EXCUSE": {
+    "sign_id": "excuse",
+    "gloss": "EXCUSE",
+    "duration_ms": 500,
+    "category": "greeting"
+  },
+  "YES": {
+    "sign_id": "yes",
+    "gloss": "YES",
+    "duration_ms": 400,
+    "category": "response"
+  },
+  "NO": {
+    "sign_id": "no",
+    "gloss": "NO",
+    "duration_ms": 400,
+    "category": "response"
+  },
+  "NOT": {
+    "sign_id": "not",
+    "gloss": "NOT",
+    "duration_ms": 400,
+    "category": "modifier"
+  },
+  "CAN": {
+    "sign_id": "can",
+    "gloss": "CAN",
+    "duration_ms": 400,
+    "category": "modifier"
+  },
+  "CAN'T": {
+    "sign_id": "cant",
+    "gloss": "CAN'T",
+    "duration_ms": 500,
+    "category": "modifier"
+  },
+  "WILL": {
+    "sign_id": "will",
+    "gloss": "WILL",
+    "duration_ms": 400,
+    "category": "modifier"
+  },
+  "MUST": {
+    "sign_id": "must",
+    "gloss": "MUST",
+    "duration_ms": 500,
+    "category": "modifier"
+  },
+  "AGAIN": {
+    "sign_id": "again",
+    "gloss": "AGAIN",
+    "duration_ms": 500,
+    "category": "modifier"
+  },
+  "TODAY": {
+    "sign_id": "today",
+    "gloss": "TODAY",
+    "duration_ms": 500,
+    "category": "time"
+  },
+  "TOMORROW": {
+    "sign_id": "tomorrow",
+    "gloss": "TOMORROW",
+    "duration_ms": 500,
+    "category": "time"
+  },
+  "YESTERDAY": {
+    "sign_id": "yesterday",
+    "gloss": "YESTERDAY",
+    "duration_ms": 500,
+    "category": "time"
+  },
+  "NOW": {
+    "sign_id": "now",
+    "gloss": "NOW",
+    "duration_ms": 400,
+    "category": "time"
+  },
+  "LATER": {
+    "sign_id": "later",
+    "gloss": "LATER",
+    "duration_ms": 500,
+    "category": "time"
+  },
+  "THERE": {
+    "sign_id": "there",
+    "gloss": "THERE",
+    "duration_ms": 400,
+    "category": "location"
+  },
+  "AFTERNOON": {
+    "sign_id": "afternoon",
+    "gloss": "AFTERNOON",
+    "duration_ms": 500,
+    "category": "time"
+  },
+  "AGE": {
+    "sign_id": "age",
+    "gloss": "AGE",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "AGREE": {
+    "sign_id": "agree",
+    "gloss": "AGREE",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "ALLERGIC": {
+    "sign_id": "allergic",
+    "gloss": "ALLERGIC",
+    "duration_ms": 600,
+    "category": "adjective"
+  },
+  "ALREADY": {
+    "sign_id": "already",
+    "gloss": "ALREADY",
+    "duration_ms": 400,
+    "category": "modifier"
+  },
+  "ALWAYS": {
+    "sign_id": "always",
+    "gloss": "ALWAYS",
+    "duration_ms": 500,
+    "category": "modifier"
+  },
+  "AMBULANCE": {
+    "sign_id": "ambulance",
+    "gloss": "AMBULANCE",
+    "duration_ms": 600,
+    "category": "noun"
+  },
+  "ANGRY": {
+    "sign_id": "angry",
+    "gloss": "ANGRY",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "AT": {
+    "sign_id": "at",
+    "gloss": "AT",
+    "duration_ms": 300,
+    "category": "preposition"
+  },
+  "BATHROOM": {
+    "sign_id": "bathroom",
+    "gloss": "BATHROOM",
+    "duration_ms": 600,
+    "category": "noun"
+  },
+  "BEFORE": {
+    "sign_id": "before",
+    "gloss": "BEFORE",
+    "duration_ms": 400,
+    "category": "time"
+  },
+  "BETTER": {
+    "sign_id": "better",
+    "gloss": "BETTER",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "BILL": {
+    "sign_id": "bill",
+    "gloss": "BILL",
+    "duration_ms": 400,
+    "category": "noun"
+  },
+  "BIRTHDAY": {
+    "sign_id": "birthday",
+    "gloss": "BIRTHDAY",
+    "duration_ms": 600,
+    "category": "noun"
+  },
+  "BUS": {
+    "sign_id": "bus",
+    "gloss": "BUS",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "BUS-STOP": {
+    "sign_id": "bus_stop",
+    "gloss": "BUS-STOP",
+    "duration_ms": 600,
+    "category": "noun"
+  },
+  "BUY": {
+    "sign_id": "buy",
+    "gloss": "BUY",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "CARD": {
+    "sign_id": "card",
+    "gloss": "CARD",
+    "duration_ms": 400,
+    "category": "noun"
+  },
+  "CARE": {
+    "sign_id": "care",
+    "gloss": "CARE",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "CAREFUL": {
+    "sign_id": "careful",
+    "gloss": "CAREFUL",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "CASH": {
+    "sign_id": "cash",
+    "gloss": "CASH",
+    "duration_ms": 400,
+    "category": "noun"
+  },
+  "CHANGE": {
+    "sign_id": "change",
+    "gloss": "CHANGE",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "CHEAP": {
+    "sign_id": "cheap",
+    "gloss": "CHEAP",
+    "duration_ms": 400,
+    "category": "adjective"
+  },
+  "CHILDREN": {
+    "sign_id": "children",
+    "gloss": "CHILDREN",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "COLD": {
+    "sign_id": "cold",
+    "gloss": "COLD",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "COLOR": {
+    "sign_id": "color",
+    "gloss": "COLOR",
+    "duration_ms": 400,
+    "category": "noun"
+  },
+  "COME-FROM": {
+    "sign_id": "come_from",
+    "gloss": "COME-FROM",
+    "duration_ms": 600,
+    "category": "verb_dir"
+  },
+  "COMPARE": {
+    "sign_id": "compare",
+    "gloss": "COMPARE",
+    "duration_ms": 600,
+    "category": "verb"
+  },
+  "CONFUSED": {
+    "sign_id": "confused",
+    "gloss": "CONFUSED",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "CONGRATULATIONS": {
+    "sign_id": "congratulations",
+    "gloss": "CONGRATULATIONS",
+    "duration_ms": 700,
+    "category": "greeting"
+  },
+  "COST": {
+    "sign_id": "cost",
+    "gloss": "COST",
+    "duration_ms": 400,
+    "category": "noun"
+  },
+  "DAY": {
+    "sign_id": "day",
+    "gloss": "DAY",
+    "duration_ms": 400,
+    "category": "time"
+  },
+  "DEAF": {
+    "sign_id": "deaf",
+    "gloss": "DEAF",
+    "duration_ms": 400,
+    "category": "adjective"
+  },
+  "DECIDE": {
+    "sign_id": "decide",
+    "gloss": "DECIDE",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "DELICIOUS": {
+    "sign_id": "delicious",
+    "gloss": "DELICIOUS",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "DIFFERENT": {
+    "sign_id": "different",
+    "gloss": "DIFFERENT",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "DISAGREE": {
+    "sign_id": "disagree",
+    "gloss": "DISAGREE",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "DO": {
+    "sign_id": "do",
+    "gloss": "DO",
+    "duration_ms": 400,
+    "category": "verb"
+  },
+  "DOCTOR": {
+    "sign_id": "doctor",
+    "gloss": "DOCTOR",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "DRIVE": {
+    "sign_id": "drive",
+    "gloss": "DRIVE",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "EMAIL": {
+    "sign_id": "email",
+    "gloss": "EMAIL",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "EMERGENCY": {
+    "sign_id": "emergency",
+    "gloss": "EMERGENCY",
+    "duration_ms": 600,
+    "category": "noun"
+  },
+  "ENOUGH": {
+    "sign_id": "enough",
+    "gloss": "ENOUGH",
+    "duration_ms": 400,
+    "category": "modifier"
+  },
+  "EVENING": {
+    "sign_id": "evening",
+    "gloss": "EVENING",
+    "duration_ms": 500,
+    "category": "time"
+  },
+  "EVERY-DAY": {
+    "sign_id": "every_day",
+    "gloss": "EVERY-DAY",
+    "duration_ms": 600,
+    "category": "time"
+  },
+  "EXCITED": {
+    "sign_id": "excited",
+    "gloss": "EXCITED",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "EXCUSE-ME": {
+    "sign_id": "excuse_me",
+    "gloss": "EXCUSE-ME",
+    "duration_ms": 500,
+    "category": "greeting"
+  },
+  "EXIT": {
+    "sign_id": "exit",
+    "gloss": "EXIT",
+    "duration_ms": 400,
+    "category": "noun"
+  },
+  "EXPENSIVE": {
+    "sign_id": "expensive",
+    "gloss": "EXPENSIVE",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "FAR": {
+    "sign_id": "far",
+    "gloss": "FAR",
+    "duration_ms": 400,
+    "category": "location"
+  },
+  "FAVORITE": {
+    "sign_id": "favorite",
+    "gloss": "FAVORITE",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "FEEL": {
+    "sign_id": "feel",
+    "gloss": "FEEL",
+    "duration_ms": 400,
+    "category": "verb"
+  },
+  "FEEL-WELL": {
+    "sign_id": "feel_well",
+    "gloss": "FEEL-WELL",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "FEW-MINUTES": {
+    "sign_id": "few_minutes",
+    "gloss": "FEW-MINUTES",
+    "duration_ms": 500,
+    "category": "time"
+  },
+  "FIND": {
+    "sign_id": "find",
+    "gloss": "FIND",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "FORGET": {
+    "sign_id": "forget",
+    "gloss": "FORGET",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "FREE": {
+    "sign_id": "free",
+    "gloss": "FREE",
+    "duration_ms": 400,
+    "category": "adjective"
+  },
+  "FROM": {
+    "sign_id": "from",
+    "gloss": "FROM",
+    "duration_ms": 300,
+    "category": "preposition"
+  },
+  "FUNNY": {
+    "sign_id": "funny",
+    "gloss": "FUNNY",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "FUTURE": {
+    "sign_id": "future",
+    "gloss": "FUTURE",
+    "duration_ms": 500,
+    "category": "time"
+  },
+  "GET": {
+    "sign_id": "get",
+    "gloss": "GET",
+    "duration_ms": 400,
+    "category": "verb"
+  },
+  "GO-STRAIGHT": {
+    "sign_id": "go_straight",
+    "gloss": "GO-STRAIGHT",
+    "duration_ms": 600,
+    "category": "verb"
+  },
+  "HAPPEN": {
+    "sign_id": "happen",
+    "gloss": "HAPPEN",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "HOPE": {
+    "sign_id": "hope",
+    "gloss": "HOPE",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "HOSPITAL": {
+    "sign_id": "hospital",
+    "gloss": "HOSPITAL",
+    "duration_ms": 600,
+    "category": "noun"
+  },
+  "HOT": {
+    "sign_id": "hot",
+    "gloss": "HOT",
+    "duration_ms": 400,
+    "category": "adjective"
+  },
+  "HOW-LONG": {
+    "sign_id": "how_long",
+    "gloss": "HOW-LONG",
+    "duration_ms": 500,
+    "category": "question"
+  },
+  "HOW-MUCH": {
+    "sign_id": "how_much",
+    "gloss": "HOW-MUCH",
+    "duration_ms": 500,
+    "category": "question"
+  },
+  "HUNGRY": {
+    "sign_id": "hungry",
+    "gloss": "HUNGRY",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "HURT": {
+    "sign_id": "hurt",
+    "gloss": "HURT",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "I-SEE": {
+    "sign_id": "i_see",
+    "gloss": "I-SEE",
+    "duration_ms": 400,
+    "category": "response"
+  },
+  "IF": {
+    "sign_id": "if",
+    "gloss": "IF",
+    "duration_ms": 300,
+    "category": "modifier"
+  },
+  "INTERESTING": {
+    "sign_id": "interesting",
+    "gloss": "INTERESTING",
+    "duration_ms": 600,
+    "category": "adjective"
+  },
+  "INTERNET": {
+    "sign_id": "internet",
+    "gloss": "INTERNET",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "IT": {
+    "sign_id": "it",
+    "gloss": "IT",
+    "duration_ms": 300,
+    "category": "pronoun"
+  },
+  "JUST": {
+    "sign_id": "just",
+    "gloss": "JUST",
+    "duration_ms": 300,
+    "category": "modifier"
+  },
+  "KEEP": {
+    "sign_id": "keep",
+    "gloss": "KEEP",
+    "duration_ms": 400,
+    "category": "verb"
+  },
+  "LAST-WEEK": {
+    "sign_id": "last_week",
+    "gloss": "LAST-WEEK",
+    "duration_ms": 600,
+    "category": "time"
+  },
+  "LEARN": {
+    "sign_id": "learn",
+    "gloss": "LEARN",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "LIVE": {
+    "sign_id": "live",
+    "gloss": "LIVE",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "LONG-TIME": {
+    "sign_id": "long_time",
+    "gloss": "LONG-TIME",
+    "duration_ms": 500,
+    "category": "time"
+  },
+  "LOOK": {
+    "sign_id": "look",
+    "gloss": "LOOK",
+    "duration_ms": 400,
+    "category": "verb"
+  },
+  "LOSE": {
+    "sign_id": "lose",
+    "gloss": "LOSE",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "LOST": {
+    "sign_id": "lost",
+    "gloss": "LOST",
+    "duration_ms": 400,
+    "category": "adjective"
+  },
+  "MAKE-SENSE": {
+    "sign_id": "make_sense",
+    "gloss": "MAKE-SENSE",
+    "duration_ms": 600,
+    "category": "expression"
+  },
+  "MARRIED": {
+    "sign_id": "married",
+    "gloss": "MARRIED",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "MATTER": {
+    "sign_id": "matter",
+    "gloss": "MATTER",
+    "duration_ms": 400,
+    "category": "verb"
+  },
+  "MAYBE": {
+    "sign_id": "maybe",
+    "gloss": "MAYBE",
+    "duration_ms": 400,
+    "category": "modifier"
+  },
+  "MEAN": {
+    "sign_id": "mean",
+    "gloss": "MEAN",
+    "duration_ms": 400,
+    "category": "verb"
+  },
+  "MEDICINE": {
+    "sign_id": "medicine",
+    "gloss": "MEDICINE",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "MEETING": {
+    "sign_id": "meeting",
+    "gloss": "MEETING",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "MIND": {
+    "sign_id": "mind",
+    "gloss": "MIND",
+    "duration_ms": 400,
+    "category": "verb"
+  },
+  "MISS": {
+    "sign_id": "miss",
+    "gloss": "MISS",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "MOMENT": {
+    "sign_id": "moment",
+    "gloss": "MOMENT",
+    "duration_ms": 400,
+    "category": "time"
+  },
+  "MONEY": {
+    "sign_id": "money",
+    "gloss": "MONEY",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "MORE": {
+    "sign_id": "more",
+    "gloss": "MORE",
+    "duration_ms": 400,
+    "category": "modifier"
+  },
+  "MORNING": {
+    "sign_id": "morning",
+    "gloss": "MORNING",
+    "duration_ms": 500,
+    "category": "time"
+  },
+  "NEAR": {
+    "sign_id": "near",
+    "gloss": "NEAR",
+    "duration_ms": 400,
+    "category": "location"
+  },
+  "NERVOUS": {
+    "sign_id": "nervous",
+    "gloss": "NERVOUS",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "NEVER": {
+    "sign_id": "never",
+    "gloss": "NEVER",
+    "duration_ms": 400,
+    "category": "modifier"
+  },
+  "NEVER-MIND": {
+    "sign_id": "never_mind",
+    "gloss": "NEVER-MIND",
+    "duration_ms": 500,
+    "category": "expression"
+  },
+  "NEXT-WEEK": {
+    "sign_id": "next_week",
+    "gloss": "NEXT-WEEK",
+    "duration_ms": 600,
+    "category": "time"
+  },
+  "NIGHT": {
+    "sign_id": "night",
+    "gloss": "NIGHT",
+    "duration_ms": 400,
+    "category": "time"
+  },
+  "NOT-YET": {
+    "sign_id": "not_yet",
+    "gloss": "NOT-YET",
+    "duration_ms": 400,
+    "category": "modifier"
+  },
+  "OF-COURSE": {
+    "sign_id": "of_course",
+    "gloss": "OF-COURSE",
+    "duration_ms": 500,
+    "category": "response"
+  },
+  "OKAY": {
+    "sign_id": "okay",
+    "gloss": "OKAY",
+    "duration_ms": 400,
+    "category": "response"
+  },
+  "OPINION": {
+    "sign_id": "opinion",
+    "gloss": "OPINION",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "ORDER": {
+    "sign_id": "order",
+    "gloss": "ORDER",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "OUTSIDE": {
+    "sign_id": "outside",
+    "gloss": "OUTSIDE",
+    "duration_ms": 400,
+    "category": "location"
+  },
+  "PAIN": {
+    "sign_id": "pain",
+    "gloss": "PAIN",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "PAST": {
+    "sign_id": "past",
+    "gloss": "PAST",
+    "duration_ms": 400,
+    "category": "time"
+  },
+  "PAY": {
+    "sign_id": "pay",
+    "gloss": "PAY",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "PHONE-NUMBER": {
+    "sign_id": "phone_number",
+    "gloss": "PHONE-NUMBER",
+    "duration_ms": 600,
+    "category": "noun"
+  },
+  "PLAN": {
+    "sign_id": "plan",
+    "gloss": "PLAN",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "POLICE": {
+    "sign_id": "police",
+    "gloss": "POLICE",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "PREFER": {
+    "sign_id": "prefer",
+    "gloss": "PREFER",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "PROBLEM": {
+    "sign_id": "problem",
+    "gloss": "PROBLEM",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "PROMISE": {
+    "sign_id": "promise",
+    "gloss": "PROMISE",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "PROUD": {
+    "sign_id": "proud",
+    "gloss": "PROUD",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "QUESTION": {
+    "sign_id": "question",
+    "gloss": "QUESTION",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "RAIN": {
+    "sign_id": "rain",
+    "gloss": "RAIN",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "REALLY": {
+    "sign_id": "really",
+    "gloss": "REALLY",
+    "duration_ms": 400,
+    "category": "modifier"
+  },
+  "REMEMBER": {
+    "sign_id": "remember",
+    "gloss": "REMEMBER",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "REPEAT": {
+    "sign_id": "repeat",
+    "gloss": "REPEAT",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "RESCHEDULE": {
+    "sign_id": "reschedule",
+    "gloss": "RESCHEDULE",
+    "duration_ms": 600,
+    "category": "verb"
+  },
+  "RETURN": {
+    "sign_id": "return",
+    "gloss": "RETURN",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "RIGHT": {
+    "sign_id": "right",
+    "gloss": "RIGHT",
+    "duration_ms": 400,
+    "category": "adjective"
+  },
+  "RIGHT-BACK": {
+    "sign_id": "right_back",
+    "gloss": "RIGHT-BACK",
+    "duration_ms": 500,
+    "category": "expression"
+  },
+  "SAME": {
+    "sign_id": "same",
+    "gloss": "SAME",
+    "duration_ms": 400,
+    "category": "adjective"
+  },
+  "SCARED": {
+    "sign_id": "scared",
+    "gloss": "SCARED",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "SEE-YOU": {
+    "sign_id": "see_you",
+    "gloss": "SEE-YOU",
+    "duration_ms": 500,
+    "category": "verb_dir"
+  },
+  "SEND": {
+    "sign_id": "send",
+    "gloss": "SEND",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "SEND-ME": {
+    "sign_id": "send_me",
+    "gloss": "SEND-ME",
+    "duration_ms": 600,
+    "category": "verb_dir"
+  },
+  "SHOULD": {
+    "sign_id": "should",
+    "gloss": "SHOULD",
+    "duration_ms": 400,
+    "category": "modifier"
+  },
+  "SHOW": {
+    "sign_id": "show",
+    "gloss": "SHOW",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "SHOW-ME": {
+    "sign_id": "show_me",
+    "gloss": "SHOW-ME",
+    "duration_ms": 600,
+    "category": "verb_dir"
+  },
+  "SICK": {
+    "sign_id": "sick",
+    "gloss": "SICK",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "SIGN-LANGUAGE": {
+    "sign_id": "sign_language",
+    "gloss": "SIGN-LANGUAGE",
+    "duration_ms": 700,
+    "category": "noun"
+  },
+  "SIZE": {
+    "sign_id": "size",
+    "gloss": "SIZE",
+    "duration_ms": 400,
+    "category": "noun"
+  },
+  "SLOW": {
+    "sign_id": "slow",
+    "gloss": "SLOW",
+    "duration_ms": 400,
+    "category": "adjective"
+  },
+  "SLOW-DOWN": {
+    "sign_id": "slow_down",
+    "gloss": "SLOW-DOWN",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "SNOW": {
+    "sign_id": "snow",
+    "gloss": "SNOW",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "SOMETIMES": {
+    "sign_id": "sometimes",
+    "gloss": "SOMETIMES",
+    "duration_ms": 500,
+    "category": "modifier"
+  },
+  "SOON": {
+    "sign_id": "soon",
+    "gloss": "SOON",
+    "duration_ms": 400,
+    "category": "time"
+  },
+  "SPEAK": {
+    "sign_id": "speak",
+    "gloss": "SPEAK",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "START": {
+    "sign_id": "start",
+    "gloss": "START",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "STOP": {
+    "sign_id": "stop",
+    "gloss": "STOP",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "SURE": {
+    "sign_id": "sure",
+    "gloss": "SURE",
+    "duration_ms": 400,
+    "category": "adjective"
+  },
+  "TAKE": {
+    "sign_id": "take",
+    "gloss": "TAKE",
+    "duration_ms": 400,
+    "category": "verb"
+  },
+  "TAKE-CARE": {
+    "sign_id": "take_care",
+    "gloss": "TAKE-CARE",
+    "duration_ms": 500,
+    "category": "greeting"
+  },
+  "TAKE-TIME": {
+    "sign_id": "take_time",
+    "gloss": "TAKE-TIME",
+    "duration_ms": 500,
+    "category": "expression"
+  },
+  "TAXI": {
+    "sign_id": "taxi",
+    "gloss": "TAXI",
+    "duration_ms": 400,
+    "category": "noun"
+  },
+  "TEXT": {
+    "sign_id": "text",
+    "gloss": "TEXT",
+    "duration_ms": 400,
+    "category": "verb"
+  },
+  "THIRSTY": {
+    "sign_id": "thirsty",
+    "gloss": "THIRSTY",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "THIS": {
+    "sign_id": "this",
+    "gloss": "THIS",
+    "duration_ms": 300,
+    "category": "pronoun"
+  },
+  "TIRED": {
+    "sign_id": "tired",
+    "gloss": "TIRED",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "TOGETHER": {
+    "sign_id": "together",
+    "gloss": "TOGETHER",
+    "duration_ms": 500,
+    "category": "modifier"
+  },
+  "TRAFFIC": {
+    "sign_id": "traffic",
+    "gloss": "TRAFFIC",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "TRAIN-STATION": {
+    "sign_id": "train_station",
+    "gloss": "TRAIN-STATION",
+    "duration_ms": 600,
+    "category": "noun"
+  },
+  "TRY": {
+    "sign_id": "try",
+    "gloss": "TRY",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "TURN-LEFT": {
+    "sign_id": "turn_left",
+    "gloss": "TURN-LEFT",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "TURN-RIGHT": {
+    "sign_id": "turn_right",
+    "gloss": "TURN-RIGHT",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "TYPE": {
+    "sign_id": "type_write",
+    "gloss": "TYPE",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "USE": {
+    "sign_id": "use",
+    "gloss": "USE",
+    "duration_ms": 400,
+    "category": "verb"
+  },
+  "VEGETARIAN": {
+    "sign_id": "vegetarian",
+    "gloss": "VEGETARIAN",
+    "duration_ms": 600,
+    "category": "adjective"
+  },
+  "VERY-MUCH": {
+    "sign_id": "very_much",
+    "gloss": "VERY-MUCH",
+    "duration_ms": 500,
+    "category": "modifier"
+  },
+  "WAY": {
+    "sign_id": "way",
+    "gloss": "WAY",
+    "duration_ms": 400,
+    "category": "noun"
+  },
+  "WELCOME": {
+    "sign_id": "welcome",
+    "gloss": "WELCOME",
+    "duration_ms": 500,
+    "category": "greeting"
+  },
+  "WIND": {
+    "sign_id": "wind",
+    "gloss": "WIND",
+    "duration_ms": 500,
+    "category": "noun"
+  },
+  "WISH": {
+    "sign_id": "wish",
+    "gloss": "WISH",
+    "duration_ms": 500,
+    "category": "verb"
+  },
+  "WORRIED": {
+    "sign_id": "worried",
+    "gloss": "WORRIED",
+    "duration_ms": 500,
+    "category": "adjective"
+  },
+  "WRITE-DOWN": {
+    "sign_id": "write_down",
+    "gloss": "WRITE-DOWN",
+    "duration_ms": 600,
+    "category": "verb"
+  },
+  "WRONG": {
+    "sign_id": "wrong",
+    "gloss": "WRONG",
+    "duration_ms": 400,
+    "category": "adjective"
+  }
+}

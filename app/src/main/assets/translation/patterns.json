@@ -1,0 +1,1122 @@
+[
+  {
+    "english": "do you have this in a different size",
+    "asl": "DIFFERENT SIZE THIS YOU HAVE",
+    "category": "shopping"
+  },
+  {
+    "english": "can you show me the way to {PLACE}",
+    "asl": "{PLACE} WAY SHOW-ME YOU CAN",
+    "category": "location"
+  },
+  {
+    "english": "what do you want to eat",
+    "asl": "EAT YOU WANT WHAT",
+    "category": "food"
+  },
+  {
+    "english": "it's good to see you",
+    "asl": "SEE YOU GOOD",
+    "category": "greeting"
+  },
+  {
+    "english": "how many {THING} do you have",
+    "asl": "YOU HAVE {THING} HOW-MANY",
+    "category": "question"
+  },
+  {
+    "english": "what day is it today",
+    "asl": "TODAY DAY WHAT",
+    "category": "question"
+  },
+  {
+    "english": "can you write it down",
+    "asl": "WRITE-DOWN YOU CAN",
+    "category": "request"
+  },
+  {
+    "english": "do you know sign language",
+    "asl": "SIGN-LANGUAGE YOU KNOW",
+    "category": "identity"
+  },
+  {
+    "english": "i have been waiting for {DURATION}",
+    "asl": "{DURATION} I WAIT",
+    "category": "time"
+  },
+  {
+    "english": "the internet is not working",
+    "asl": "INTERNET NOT WORK",
+    "category": "technology"
+  },
+  {
+    "english": "i will meet you at {PLACE}",
+    "asl": "{PLACE} MEET YOU I WILL",
+    "category": "action"
+  },
+  {
+    "english": "i am waiting for you",
+    "asl": "YOU WAIT I",
+    "category": "action"
+  },
+  {
+    "english": "what is the weather today",
+    "asl": "TODAY WEATHER WHAT",
+    "category": "weather"
+  },
+  {
+    "english": "i don't have enough money",
+    "asl": "MONEY ENOUGH I NOT HAVE",
+    "category": "shopping"
+  },
+  {
+    "english": "can i pay with card",
+    "asl": "CARD PAY I CAN",
+    "category": "shopping"
+  },
+  {
+    "english": "i want to return this",
+    "asl": "THIS RETURN I WANT",
+    "category": "shopping"
+  },
+  {
+    "english": "i have a meeting at {TIME}",
+    "asl": "{TIME} MEETING I HAVE",
+    "category": "work"
+  },
+  {
+    "english": "i need to finish {TASK} by {TIME}",
+    "asl": "{TIME} {TASK} FINISH I NEED",
+    "category": "work"
+  },
+  {
+    "english": "where is the bus stop",
+    "asl": "BUS-STOP WHERE",
+    "category": "transport"
+  },
+  {
+    "english": "where is the train station",
+    "asl": "TRAIN-STATION WHERE",
+    "category": "transport"
+  },
+  {
+    "english": "how do i get to {PLACE}",
+    "asl": "{PLACE} HOW GET",
+    "category": "transport"
+  },
+  {
+    "english": "does this bus go to {PLACE}",
+    "asl": "{PLACE} THIS BUS GO",
+    "category": "transport"
+  },
+  {
+    "english": "how are you doing",
+    "asl": "YOU HOW YOU",
+    "category": "greeting"
+  },
+  {
+    "english": "nice to meet you",
+    "asl": "MEET YOU NICE",
+    "category": "greeting"
+  },
+  {
+    "english": "pleased to meet you",
+    "asl": "MEET YOU NICE",
+    "category": "greeting"
+  },
+  {
+    "english": "long time no see",
+    "asl": "LONG-TIME NO SEE",
+    "category": "greeting"
+  },
+  {
+    "english": "have a good day",
+    "asl": "YOUR DAY GOOD",
+    "category": "farewell"
+  },
+  {
+    "english": "have a good night",
+    "asl": "YOUR NIGHT GOOD",
+    "category": "farewell"
+  },
+  {
+    "english": "what is your name",
+    "asl": "YOUR NAME WHAT",
+    "category": "question"
+  },
+  {
+    "english": "how much does {THING} cost",
+    "asl": "{THING} COST HOW-MUCH",
+    "category": "question"
+  },
+  {
+    "english": "what time is it",
+    "asl": "TIME WHAT",
+    "category": "question"
+  },
+  {
+    "english": "what are you doing",
+    "asl": "YOU DO WHAT",
+    "category": "question"
+  },
+  {
+    "english": "what do you want",
+    "asl": "YOU WANT WHAT",
+    "category": "question"
+  },
+  {
+    "english": "can you help me",
+    "asl": "YOU HELP ME CAN",
+    "category": "question"
+  },
+  {
+    "english": "how old are you",
+    "asl": "YOUR AGE WHAT",
+    "category": "question"
+  },
+  {
+    "english": "where are you from",
+    "asl": "YOU FROM WHERE",
+    "category": "question"
+  },
+  {
+    "english": "what do you do",
+    "asl": "YOUR WORK WHAT",
+    "category": "question"
+  },
+  {
+    "english": "i'll be right back",
+    "asl": "RIGHT-BACK I",
+    "category": "request"
+  },
+  {
+    "english": "i am {AGE} years old",
+    "asl": "MY AGE {AGE}",
+    "category": "identity"
+  },
+  {
+    "english": "i work as a {JOB}",
+    "asl": "MY WORK {JOB}",
+    "category": "identity"
+  },
+  {
+    "english": "i am not married",
+    "asl": "MARRIED I NOT",
+    "category": "identity"
+  },
+  {
+    "english": "i use sign language",
+    "asl": "SIGN-LANGUAGE I USE",
+    "category": "identity"
+  },
+  {
+    "english": "what time does {EVENT} start",
+    "asl": "{EVENT} START WHEN",
+    "category": "time"
+  },
+  {
+    "english": "see you next week",
+    "asl": "NEXT-WEEK SEE-YOU",
+    "category": "time"
+  },
+  {
+    "english": "i'll do it now",
+    "asl": "NOW I DO",
+    "category": "time"
+  },
+  {
+    "english": "i did it already",
+    "asl": "ALREADY I DO",
+    "category": "time"
+  },
+  {
+    "english": "in a few minutes",
+    "asl": "FEW-MINUTES",
+    "category": "time"
+  },
+  {
+    "english": "where is the bathroom",
+    "asl": "BATHROOM WHERE",
+    "category": "location"
+  },
+  {
+    "english": "where is the exit",
+    "asl": "EXIT WHERE",
+    "category": "location"
+  },
+  {
+    "english": "it is far from {PLACE}",
+    "asl": "{PLACE} FAR",
+    "category": "location"
+  },
+  {
+    "english": "i am going to {PLACE}",
+    "asl": "{PLACE} GO I",
+    "category": "location"
+  },
+  {
+    "english": "i need a doctor",
+    "asl": "DOCTOR I NEED",
+    "category": "health"
+  },
+  {
+    "english": "i am in pain",
+    "asl": "PAIN I",
+    "category": "health"
+  },
+  {
+    "english": "i am allergic to {THING}",
+    "asl": "{THING} ALLERGIC I",
+    "category": "health"
+  },
+  {
+    "english": "where is the hospital",
+    "asl": "HOSPITAL WHERE",
+    "category": "health"
+  },
+  {
+    "english": "i don't feel well",
+    "asl": "FEEL-WELL I NOT",
+    "category": "health"
+  },
+  {
+    "english": "i take medication for {CONDITION}",
+    "asl": "{CONDITION} MEDICINE I TAKE",
+    "category": "health"
+  },
+  {
+    "english": "i need my medicine",
+    "asl": "MY MEDICINE I NEED",
+    "category": "health"
+  },
+  {
+    "english": "my phone number is {NUMBER}",
+    "asl": "MY PHONE-NUMBER {NUMBER}",
+    "category": "technology"
+  },
+  {
+    "english": "can you text me",
+    "asl": "TEXT ME YOU CAN",
+    "category": "technology"
+  },
+  {
+    "english": "i will call you",
+    "asl": "CALL YOU I WILL",
+    "category": "technology"
+  },
+  {
+    "english": "what is your email",
+    "asl": "YOUR EMAIL WHAT",
+    "category": "technology"
+  },
+  {
+    "english": "can you type it",
+    "asl": "TYPE IT YOU CAN",
+    "category": "technology"
+  },
+  {
+    "english": "i gave you the {OBJECT}",
+    "asl": "{OBJECT} I GIVE-YOU",
+    "category": "action"
+  },
+  {
+    "english": "can you give me {THING}",
+    "asl": "{THING} GIVE-ME YOU CAN",
+    "category": "action"
+  },
+  {
+    "english": "i want to buy {THING}",
+    "asl": "{THING} BUY I WANT",
+    "category": "action"
+  },
+  {
+    "english": "do you want to {VERB}",
+    "asl": "YOU WANT {VERB}",
+    "category": "action"
+  },
+  {
+    "english": "the weather is nice",
+    "asl": "WEATHER NICE",
+    "category": "weather"
+  },
+  {
+    "english": "how much is this",
+    "asl": "THIS COST HOW-MUCH",
+    "category": "shopping"
+  },
+  {
+    "english": "do you take cash",
+    "asl": "CASH YOU TAKE",
+    "category": "shopping"
+  },
+  {
+    "english": "that doesn't make sense",
+    "asl": "THAT MAKE-SENSE NOT",
+    "category": "opinion"
+  },
+  {
+    "english": "i am late for {EVENT}",
+    "asl": "LATE {EVENT} I",
+    "category": "work"
+  },
+  {
+    "english": "can we reschedule the {EVENT}",
+    "asl": "{EVENT} RESCHEDULE CAN WE",
+    "category": "work"
+  },
+  {
+    "english": "i have a question",
+    "asl": "QUESTION I HAVE",
+    "category": "work"
+  },
+  {
+    "english": "i need a taxi",
+    "asl": "TAXI I NEED",
+    "category": "transport"
+  },
+  {
+    "english": "i missed the bus",
+    "asl": "BUS MISS I",
+    "category": "transport"
+  },
+  {
+    "english": "i am driving to {PLACE}",
+    "asl": "{PLACE} DRIVE I",
+    "category": "transport"
+  },
+  {
+    "english": "the traffic is bad",
+    "asl": "TRAFFIC BAD",
+    "category": "transport"
+  },
+  {
+    "english": "how are you",
+    "asl": "YOU HOW YOU",
+    "category": "greeting"
+  },
+  {
+    "english": "see you later",
+    "asl": "LATER SEE-YOU",
+    "category": "farewell"
+  },
+  {
+    "english": "see you tomorrow",
+    "asl": "TOMORROW SEE-YOU",
+    "category": "farewell"
+  },
+  {
+    "english": "see you soon",
+    "asl": "SOON SEE-YOU",
+    "category": "farewell"
+  },
+  {
+    "english": "i don't understand",
+    "asl": "UNDERSTAND I NOT",
+    "category": "response"
+  },
+  {
+    "english": "please repeat that",
+    "asl": "REPEAT PLEASE",
+    "category": "response"
+  },
+  {
+    "english": "please slow down",
+    "asl": "SLOW-DOWN PLEASE",
+    "category": "response"
+  },
+  {
+    "english": "what is your {NOUN}",
+    "asl": "YOUR {NOUN} WHAT",
+    "category": "question"
+  },
+  {
+    "english": "where is the {PLACE}",
+    "asl": "{PLACE} WHERE",
+    "category": "question"
+  },
+  {
+    "english": "why are you {VERB}ing",
+    "asl": "YOU {VERB} WHY",
+    "category": "question"
+  },
+  {
+    "english": "do you understand",
+    "asl": "YOU UNDERSTAND",
+    "category": "question"
+  },
+  {
+    "english": "do you want {THING}",
+    "asl": "{THING} YOU WANT",
+    "category": "question"
+  },
+  {
+    "english": "i need help",
+    "asl": "HELP I NEED",
+    "category": "request"
+  },
+  {
+    "english": "i would like {THING}",
+    "asl": "{THING} I WANT",
+    "category": "request"
+  },
+  {
+    "english": "can i have {THING}",
+    "asl": "{THING} I CAN HAVE",
+    "category": "request"
+  },
+  {
+    "english": "may i have {THING}",
+    "asl": "{THING} I CAN HAVE",
+    "category": "request"
+  },
+  {
+    "english": "please give me {THING}",
+    "asl": "PLEASE {THING} GIVE-ME",
+    "category": "request"
+  },
+  {
+    "english": "wait a moment",
+    "asl": "WAIT MOMENT",
+    "category": "request"
+  },
+  {
+    "english": "tell me more",
+    "asl": "MORE TELL-ME",
+    "category": "request"
+  },
+  {
+    "english": "i am happy",
+    "asl": "HAPPY I",
+    "category": "feeling"
+  },
+  {
+    "english": "i am sad",
+    "asl": "SAD I",
+    "category": "feeling"
+  },
+  {
+    "english": "i am tired",
+    "asl": "TIRED I",
+    "category": "feeling"
+  },
+  {
+    "english": "i am hungry",
+    "asl": "HUNGRY I",
+    "category": "feeling"
+  },
+  {
+    "english": "i am thirsty",
+    "asl": "THIRSTY I",
+    "category": "feeling"
+  },
+  {
+    "english": "i am sick",
+    "asl": "SICK I",
+    "category": "feeling"
+  },
+  {
+    "english": "i am fine",
+    "asl": "FINE I",
+    "category": "feeling"
+  },
+  {
+    "english": "i am not {ADJECTIVE}",
+    "asl": "{ADJECTIVE} I NOT",
+    "category": "feeling"
+  },
+  {
+    "english": "are you okay",
+    "asl": "YOU OKAY",
+    "category": "feeling"
+  },
+  {
+    "english": "are you hungry",
+    "asl": "HUNGRY YOU",
+    "category": "feeling"
+  },
+  {
+    "english": "my name is {NAME}",
+    "asl": "MY NAME {NAME}",
+    "category": "identity"
+  },
+  {
+    "english": "i am from {PLACE}",
+    "asl": "FROM {PLACE} I",
+    "category": "identity"
+  },
+  {
+    "english": "i work at {PLACE}",
+    "asl": "AT {PLACE} I WORK",
+    "category": "identity"
+  },
+  {
+    "english": "i live in {PLACE}",
+    "asl": "I LIVE {PLACE}",
+    "category": "identity"
+  },
+  {
+    "english": "i am married",
+    "asl": "MARRIED I",
+    "category": "identity"
+  },
+  {
+    "english": "i am deaf",
+    "asl": "DEAF I",
+    "category": "identity"
+  },
+  {
+    "english": "please speak slowly",
+    "asl": "SLOW SPEAK PLEASE",
+    "category": "identity"
+  },
+  {
+    "english": "i will {VERB} later",
+    "asl": "LATER I WILL {VERB}",
+    "category": "time"
+  },
+  {
+    "english": "i will {VERB} tomorrow",
+    "asl": "TOMORROW I WILL {VERB}",
+    "category": "time"
+  },
+  {
+    "english": "it will take {DURATION}",
+    "asl": "{DURATION} TAKE-TIME",
+    "category": "time"
+  },
+  {
+    "english": "it is {TIME} o'clock",
+    "asl": "TIME {TIME}",
+    "category": "time"
+  },
+  {
+    "english": "it is near {PLACE}",
+    "asl": "{PLACE} NEAR",
+    "category": "location"
+  },
+  {
+    "english": "i am at {PLACE}",
+    "asl": "AT {PLACE} I",
+    "category": "location"
+  },
+  {
+    "english": "how far is {PLACE}",
+    "asl": "{PLACE} FAR HOW",
+    "category": "location"
+  },
+  {
+    "english": "i am lost",
+    "asl": "LOST I",
+    "category": "location"
+  },
+  {
+    "english": "call an ambulance",
+    "asl": "AMBULANCE CALL",
+    "category": "health"
+  },
+  {
+    "english": "call the police",
+    "asl": "POLICE CALL",
+    "category": "health"
+  },
+  {
+    "english": "the food is {ADJECTIVE}",
+    "asl": "FOOD {ADJECTIVE}",
+    "category": "food"
+  },
+  {
+    "english": "i don't like {FOOD}",
+    "asl": "{FOOD} I LIKE NOT",
+    "category": "food"
+  },
+  {
+    "english": "can i order {FOOD}",
+    "asl": "{FOOD} I ORDER CAN",
+    "category": "food"
+  },
+  {
+    "english": "the bill please",
+    "asl": "BILL PLEASE",
+    "category": "food"
+  },
+  {
+    "english": "i am vegetarian",
+    "asl": "VEGETARIAN I",
+    "category": "food"
+  },
+  {
+    "english": "do you have {FOOD}",
+    "asl": "{FOOD} YOU HAVE",
+    "category": "food"
+  },
+  {
+    "english": "that was delicious",
+    "asl": "DELICIOUS THAT",
+    "category": "food"
+  },
+  {
+    "english": "i want water",
+    "asl": "WATER I WANT",
+    "category": "food"
+  },
+  {
+    "english": "send me the {THING}",
+    "asl": "{THING} SEND-ME",
+    "category": "technology"
+  },
+  {
+    "english": "i gave {PERSON} the {OBJECT}",
+    "asl": "{OBJECT} I GIVE-{PERSON}",
+    "category": "action"
+  },
+  {
+    "english": "i lost my {THING}",
+    "asl": "MY {THING} LOSE I",
+    "category": "action"
+  },
+  {
+    "english": "i found it",
+    "asl": "FIND I",
+    "category": "action"
+  },
+  {
+    "english": "let's go to {PLACE}",
+    "asl": "{PLACE} GO WE",
+    "category": "action"
+  },
+  {
+    "english": "i'm going to {VERB}",
+    "asl": "FUTURE I {VERB}",
+    "category": "action"
+  },
+  {
+    "english": "i went to {PLACE}",
+    "asl": "{PLACE} I GO PAST",
+    "category": "action"
+  },
+  {
+    "english": "i don't know",
+    "asl": "KNOW I NOT",
+    "category": "action"
+  },
+  {
+    "english": "i'm not sure",
+    "asl": "SURE I NOT",
+    "category": "action"
+  },
+  {
+    "english": "this is my {FAMILY_MEMBER}",
+    "asl": "MY {FAMILY_MEMBER} THIS",
+    "category": "family"
+  },
+  {
+    "english": "i have a {FAMILY_MEMBER}",
+    "asl": "{FAMILY_MEMBER} I HAVE",
+    "category": "family"
+  },
+  {
+    "english": "my {FAMILY_MEMBER}'s name is {NAME}",
+    "asl": "MY {FAMILY_MEMBER} NAME {NAME}",
+    "category": "family"
+  },
+  {
+    "english": "where is your {FAMILY_MEMBER}",
+    "asl": "YOUR {FAMILY_MEMBER} WHERE",
+    "category": "family"
+  },
+  {
+    "english": "i miss my {FAMILY_MEMBER}",
+    "asl": "MY {FAMILY_MEMBER} MISS I",
+    "category": "family"
+  },
+  {
+    "english": "how is your {FAMILY_MEMBER}",
+    "asl": "YOUR {FAMILY_MEMBER} HOW",
+    "category": "family"
+  },
+  {
+    "english": "i have {NUMBER} children",
+    "asl": "I HAVE CHILDREN {NUMBER}",
+    "category": "family"
+  },
+  {
+    "english": "it is {ADJECTIVE} outside",
+    "asl": "OUTSIDE {ADJECTIVE}",
+    "category": "weather"
+  },
+  {
+    "english": "it is raining",
+    "asl": "RAIN",
+    "category": "weather"
+  },
+  {
+    "english": "it is snowing",
+    "asl": "SNOW",
+    "category": "weather"
+  },
+  {
+    "english": "it is hot",
+    "asl": "HOT",
+    "category": "weather"
+  },
+  {
+    "english": "it is cold",
+    "asl": "COLD",
+    "category": "weather"
+  },
+  {
+    "english": "it is windy",
+    "asl": "WIND",
+    "category": "weather"
+  },
+  {
+    "english": "that is expensive",
+    "asl": "EXPENSIVE THAT",
+    "category": "shopping"
+  },
+  {
+    "english": "that is cheap",
+    "asl": "CHEAP THAT",
+    "category": "shopping"
+  },
+  {
+    "english": "keep the change",
+    "asl": "CHANGE KEEP",
+    "category": "shopping"
+  },
+  {
+    "english": "i was wrong",
+    "asl": "WRONG I",
+    "category": "opinion"
+  },
+  {
+    "english": "you are right",
+    "asl": "RIGHT YOU",
+    "category": "opinion"
+  },
+  {
+    "english": "in my opinion {CLAUSE}",
+    "asl": "MY OPINION {CLAUSE}",
+    "category": "opinion"
+  },
+  {
+    "english": "i am busy",
+    "asl": "BUSY I",
+    "category": "work"
+  },
+  {
+    "english": "good morning",
+    "asl": "GOOD MORNING",
+    "category": "greeting"
+  },
+  {
+    "english": "good afternoon",
+    "asl": "GOOD AFTERNOON",
+    "category": "greeting"
+  },
+  {
+    "english": "good evening",
+    "asl": "GOOD EVENING",
+    "category": "greeting"
+  },
+  {
+    "english": "good night",
+    "asl": "GOOD NIGHT",
+    "category": "greeting"
+  },
+  {
+    "english": "take care",
+    "asl": "TAKE-CARE",
+    "category": "farewell"
+  },
+  {
+    "english": "thank you",
+    "asl": "THANK-YOU",
+    "category": "response"
+  },
+  {
+    "english": "you're welcome",
+    "asl": "WELCOME",
+    "category": "response"
+  },
+  {
+    "english": "no problem",
+    "asl": "NO PROBLEM",
+    "category": "response"
+  },
+  {
+    "english": "i'm sorry",
+    "asl": "SORRY I",
+    "category": "response"
+  },
+  {
+    "english": "excuse me",
+    "asl": "EXCUSE-ME",
+    "category": "response"
+  },
+  {
+    "english": "i understand",
+    "asl": "UNDERSTAND I",
+    "category": "response"
+  },
+  {
+    "english": "i see",
+    "asl": "I-SEE",
+    "category": "response"
+  },
+  {
+    "english": "that's right",
+    "asl": "RIGHT THAT",
+    "category": "response"
+  },
+  {
+    "english": "that's wrong",
+    "asl": "WRONG THAT",
+    "category": "response"
+  },
+  {
+    "english": "of course",
+    "asl": "OF-COURSE",
+    "category": "response"
+  },
+  {
+    "english": "where is {THING}",
+    "asl": "{THING} WHERE",
+    "category": "question"
+  },
+  {
+    "english": "when is {EVENT}",
+    "asl": "{EVENT} WHEN",
+    "category": "question"
+  },
+  {
+    "english": "who is {PERSON}",
+    "asl": "{PERSON} WHO",
+    "category": "question"
+  },
+  {
+    "english": "what happened",
+    "asl": "HAPPEN WHAT",
+    "category": "question"
+  },
+  {
+    "english": "do you {VERB}",
+    "asl": "YOU {VERB}",
+    "category": "question"
+  },
+  {
+    "english": "can you {VERB}",
+    "asl": "YOU {VERB} CAN",
+    "category": "question"
+  },
+  {
+    "english": "i want {THING}",
+    "asl": "{THING} I WANT",
+    "category": "request"
+  },
+  {
+    "english": "i need {THING}",
+    "asl": "{THING} I NEED",
+    "category": "request"
+  },
+  {
+    "english": "show me",
+    "asl": "SHOW ME",
+    "category": "request"
+  },
+  {
+    "english": "i am {ADJECTIVE}",
+    "asl": "{ADJECTIVE} I",
+    "category": "feeling"
+  },
+  {
+    "english": "i feel {ADJECTIVE}",
+    "asl": "{ADJECTIVE} I FEEL",
+    "category": "feeling"
+  },
+  {
+    "english": "he is {ADJECTIVE}",
+    "asl": "{ADJECTIVE} HE",
+    "category": "feeling"
+  },
+  {
+    "english": "she is {ADJECTIVE}",
+    "asl": "{ADJECTIVE} SHE",
+    "category": "feeling"
+  },
+  {
+    "english": "they are {ADJECTIVE}",
+    "asl": "{ADJECTIVE} THEY",
+    "category": "feeling"
+  },
+  {
+    "english": "i {VERB}ed yesterday",
+    "asl": "YESTERDAY I {VERB}",
+    "category": "time"
+  },
+  {
+    "english": "not yet",
+    "asl": "NOT-YET",
+    "category": "time"
+  },
+  {
+    "english": "turn left",
+    "asl": "TURN-LEFT",
+    "category": "location"
+  },
+  {
+    "english": "turn right",
+    "asl": "TURN-RIGHT",
+    "category": "location"
+  },
+  {
+    "english": "go straight",
+    "asl": "GO-STRAIGHT",
+    "category": "location"
+  },
+  {
+    "english": "this hurts",
+    "asl": "HURT THIS",
+    "category": "health"
+  },
+  {
+    "english": "i have {CONDITION}",
+    "asl": "{CONDITION} I HAVE",
+    "category": "health"
+  },
+  {
+    "english": "i like {FOOD}",
+    "asl": "{FOOD} I LIKE",
+    "category": "food"
+  },
+  {
+    "english": "i can {VERB}",
+    "asl": "{VERB} I CAN",
+    "category": "action"
+  },
+  {
+    "english": "i can't {VERB}",
+    "asl": "{VERB} I CAN'T",
+    "category": "action"
+  },
+  {
+    "english": "i don't {VERB}",
+    "asl": "{VERB} I NOT",
+    "category": "action"
+  },
+  {
+    "english": "i will {VERB}",
+    "asl": "WILL I {VERB}",
+    "category": "action"
+  },
+  {
+    "english": "i just {VERB}ed",
+    "asl": "JUST I {VERB}",
+    "category": "action"
+  },
+  {
+    "english": "i think {CLAUSE}",
+    "asl": "{CLAUSE} I THINK",
+    "category": "action"
+  },
+  {
+    "english": "i know {CLAUSE}",
+    "asl": "{CLAUSE} I KNOW",
+    "category": "action"
+  },
+  {
+    "english": "i agree",
+    "asl": "AGREE I",
+    "category": "action"
+  },
+  {
+    "english": "i disagree",
+    "asl": "DISAGREE I",
+    "category": "action"
+  },
+  {
+    "english": "my {FAMILY_MEMBER} is {ADJECTIVE}",
+    "asl": "MY {FAMILY_MEMBER} {ADJECTIVE}",
+    "category": "family"
+  },
+  {
+    "english": "that's interesting",
+    "asl": "INTERESTING THAT",
+    "category": "opinion"
+  },
+  {
+    "english": "i believe {CLAUSE}",
+    "asl": "{CLAUSE} I THINK",
+    "category": "opinion"
+  },
+  {
+    "english": "hello",
+    "asl": "HELLO",
+    "category": "greeting"
+  },
+  {
+    "english": "hi",
+    "asl": "HELLO",
+    "category": "greeting"
+  },
+  {
+    "english": "welcome",
+    "asl": "WELCOME",
+    "category": "greeting"
+  },
+  {
+    "english": "goodbye",
+    "asl": "GOODBYE",
+    "category": "farewell"
+  },
+  {
+    "english": "bye",
+    "asl": "GOODBYE",
+    "category": "farewell"
+  },
+  {
+    "english": "thanks",
+    "asl": "THANK-YOU",
+    "category": "response"
+  },
+  {
+    "english": "yes",
+    "asl": "YES",
+    "category": "response"
+  },
+  {
+    "english": "no",
+    "asl": "NO",
+    "category": "response"
+  },
+  {
+    "english": "maybe",
+    "asl": "MAYBE",
+    "category": "response"
+  },
+  {
+    "english": "okay",
+    "asl": "OKAY",
+    "category": "response"
+  },
+  {
+    "english": "please {VERB}",
+    "asl": "PLEASE {VERB}",
+    "category": "request"
+  },
+  {
+    "english": "stop",
+    "asl": "STOP",
+    "category": "request"
+  },
+  {
+    "english": "help",
+    "asl": "HELP",
+    "category": "request"
+  },
+  {
+    "english": "emergency",
+    "asl": "EMERGENCY",
+    "category": "health"
+  }
+]
