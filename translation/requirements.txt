@@ -6,7 +6,7 @@ sentence-transformers==2.7.0
 faiss-cpu==1.8.0
 
 # Tier 3: T5-small fine-tuning + ONNX export
-transformers==5.3.0
+transformers==5.5.0
 torch==2.12.1
 optimum[onnxruntime]==1.20.0
 onnx==1.22.0
