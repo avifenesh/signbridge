@@ -7,7 +7,7 @@ faiss-cpu==1.8.0
 
 # Tier 3: T5-small fine-tuning + ONNX export
 transformers==5.5.0
-torch==2.12.1
+torch==2.13.0
 optimum[onnxruntime]==1.20.0
 onnx==1.22.0
 onnxruntime==1.18.0
