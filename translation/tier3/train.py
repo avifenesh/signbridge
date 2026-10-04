@@ -30,6 +30,7 @@ from pathlib import Path
 from typing import Iterator
 
 from translation.config import CACHE_DIR, CHECKPOINTS_DIR, T5_BASE_MODEL, T3_CONFIDENCE_THRESHOLD
+from translation._tokenizer_security import _install_chat_template_save_guard
 
 # Minimum sentence pairs before Tier 3 is considered viable
 MIN_TRAINING_PAIRS = 2_000
@@ -102,6 +103,7 @@ def train(
     if verbose:
         print(f"[tier3] Train: {len(train_data)}  Eval: {len(eval_data)}")
 
+    _install_chat_template_save_guard()
     tokenizer = AutoTokenizer.from_pretrained(
         T5_BASE_MODEL, cache_dir=str(CACHE_DIR / "models")
     )

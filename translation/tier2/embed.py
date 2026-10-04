@@ -12,6 +12,8 @@ from __future__ import annotations
 import numpy as np
 from pathlib import Path
 
+from translation._tokenizer_security import _install_chat_template_save_guard
+
 
 class MiniLMEmbedder:
     """Sentence embedder using all-MiniLM-L6-v2."""
@@ -85,6 +87,7 @@ class MiniLMEmbedder:
             ) from e
 
         cache = str(self._model_cache) if self._model_cache else None
+        _install_chat_template_save_guard()
         ort_model = ORTModelForFeatureExtraction.from_pretrained(
             self.MODEL_NAME,
             export=True,

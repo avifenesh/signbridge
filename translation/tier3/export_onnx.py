@@ -24,6 +24,7 @@ import sys
 from pathlib import Path
 
 from translation.config import ARTIFACTS_DIR, CACHE_DIR, T5_ONNX
+from translation._tokenizer_security import _install_chat_template_save_guard
 
 
 def export_onnx(
@@ -51,6 +52,7 @@ def export_onnx(
         print(f"[tier3] Exporting {checkpoint_dir} → ONNX…")
 
     # Export via Optimum (handles encoder/decoder split automatically)
+    _install_chat_template_save_guard()
     ort_model = ORTModelForSeq2SeqLM.from_pretrained(
         str(checkpoint_dir),
         export=True,
