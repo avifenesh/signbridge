@@ -130,9 +130,8 @@ class AslTranslationEngine(private val context: Context) {
  */
 class PatternHashTable {
 
-    data class PatternEntry(
-        val pattern: Regex,
-        val slotNames: List<String>,
+    private data class PatternEntry(
+        val pattern: SlotPattern,
         val aslTemplate: String,
         val sourceEnglish: String
     )
@@ -249,30 +248,11 @@ class PatternHashTable {
     }
 
     private fun addPattern(englishPattern: String, aslTemplate: String) {
-        val slotRegex = Regex("\\{(\\w+)\\}")
-        val slotNames = slotRegex.findAll(englishPattern)
-            .map { it.groupValues[1] }
-            .toList()
-
-        // Split on slots, escape fixed parts, rejoin with capture groups
-        val parts = slotRegex.split(englishPattern)
-        val slotMatches = slotRegex.findAll(englishPattern).toList()
-
-        val regexBuilder = StringBuilder("^")
-        for (i in parts.indices) {
-            regexBuilder.append(Regex.escape(parts[i]))
-            if (i < slotMatches.size) {
-                val slotName = slotMatches[i].groupValues[1]
-                regexBuilder.append("(?<$slotName>.+?)")
-            }
-        }
-        regexBuilder.append("[.?!]?$")
-        val regexStr = regexBuilder.toString()
-
+        // Positional groups: slot names like FAMILY_MEMBER are not legal Java group names
+        val compiled = SlotPattern(englishPattern)
         patterns.add(
             PatternEntry(
-                pattern = Regex(regexStr, RegexOption.IGNORE_CASE),
-                slotNames = slotNames,
+                pattern = compiled,
                 aslTemplate = aslTemplate,
                 sourceEnglish = englishPattern
             )
@@ -281,21 +261,11 @@ class PatternHashTable {
 
     fun match(normalizedSentence: String): AslTranslation? {
         for (entry in patterns) {
-            val matchResult = entry.pattern.find(normalizedSentence) ?: continue
-
-            val slotValues = mutableMapOf<String, String>()
-            for (slot in entry.slotNames) {
-                val value = try {
-                    matchResult.groups[slot]?.value ?: continue
-                } catch (e: Exception) {
-                    continue
-                }
-                slotValues[slot] = value.uppercase()
-            }
+            val slotValues = entry.pattern.match(normalizedSentence) ?: continue
 
             var aslGloss = entry.aslTemplate
             for ((slot, value) in slotValues) {
-                aslGloss = aslGloss.replace("{$slot}", value)
+                aslGloss = aslGloss.replace("{$slot}", value.uppercase())
             }
 
             val glossTokens = aslGloss.split(" ").filter { it.isNotBlank() }

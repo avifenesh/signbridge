@@ -208,6 +208,76 @@ def test_adapt_no_match_strips_slots():
     assert "{" not in result
 
 
+def _stub_index(mapping, vectors, embed):
+    """VectorIndex with an in-memory corpus and a fake embedder (no model)."""
+    import numpy as np
+    from translation.tier2.query import VectorIndex
+
+    class _Embedder:
+        def embed_one(self, s):
+            v = np.asarray(embed(s), dtype=np.float32)
+            return v / np.linalg.norm(v)
+
+    class _Index:
+        def __init__(self, vecs):
+            self.vecs = np.asarray(vecs, dtype=np.float32)
+            self.vecs /= np.linalg.norm(self.vecs, axis=1, keepdims=True)
+
+        def search(self, q, k):
+            sims = self.vecs @ q[0]
+            order = np.argsort(-sims)[:k]
+            return sims[order][None, :], order[None, :]
+
+    idx = VectorIndex.__new__(VectorIndex)
+    idx.threshold = 0.75
+    idx._embedder = _Embedder()
+    idx._index = _Index(vectors)
+    idx._mapping = mapping
+    idx._loaded = True
+    return idx
+
+
+def test_template_match_beats_shared_filler_neighbor():
+    """A query that fits a candidate's template must not lose to a closer
+    example of a different template that only shares the slot filler."""
+    mapping = [
+        {"english": "i like pizza", "asl": "{FOOD} I LIKE", "pattern": "i like {FOOD}"},
+        {"english": "i want coffee", "asl": "{THING} I WANT", "pattern": "i want {THING}"},
+    ]
+    # Embedding axes: [pizza, coffee, like, want]. The filler dominates, as
+    # with MiniLM, so "i want pizza" is nearer "i like pizza" than "i want coffee".
+    words = {"pizza": [3, 0, 0, 0], "coffee": [0, 3, 0, 0], "like": [0, 0, 1, 0], "want": [0, 0, 0, 1]}
+    def embed(s):
+        return [sum(c) for c in zip([0.01] * 4, *(words[w] for w in s.split() if w in words))]
+    idx = _stub_index(mapping, [embed(m["english"]) for m in mapping], embed)
+
+    match = idx.query("i want pizza")
+    assert match is not None
+    assert match.source_pattern == "i want {THING}"
+    assert match.asl_gloss == "PIZZA I WANT"
+    assert match.cosine_similarity >= 0.99
+
+
+def test_no_template_match_keeps_nearest_neighbor():
+    """Without a template match the raw nearest neighbour and threshold apply."""
+    mapping = [
+        {"english": "i like pizza", "asl": "{FOOD} I LIKE", "pattern": "i like {FOOD}"},
+        {"english": "i want coffee", "asl": "{THING} I WANT", "pattern": "i want {THING}"},
+    ]
+    words = {"pizza": [3, 0, 0, 0], "coffee": [0, 3, 0, 0], "like": [0, 0, 1, 0], "want": [0, 0, 0, 1]}
+    def embed(s):
+        return [sum(c) for c in zip([0.01] * 4, *(words[w] for w in s.split() if w in words))]
+    idx = _stub_index(mapping, [embed(m["english"]) for m in mapping], embed)
+
+    match = idx.query("i love pizza")
+    assert match is not None
+    assert match.source_pattern == "i like {FOOD}"
+    assert match.asl_gloss == "I LIKE"
+
+    idx.threshold = 1.01
+    assert idx.query("i love pizza") is None
+
+
 # ── Contract fixtures (Tier 2) ────────────────────────────────────────────────
 
 @skip_no_deps
