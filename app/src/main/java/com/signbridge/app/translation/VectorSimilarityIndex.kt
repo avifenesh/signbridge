@@ -28,12 +28,6 @@ class VectorSimilarityIndex(private val context: Context) {
 
     private var miniLmEmbedder: MiniLmEmbedder? = null
 
-    private data class VectorEntry(
-        val pattern: String,
-        val aslTemplate: String,
-        val embedding: FloatArray
-    )
-
     private val entries = mutableListOf<VectorEntry>()
     private var dims = 384
     private var embedderType = "bow"
@@ -94,9 +88,7 @@ class VectorSimilarityIndex(private val context: Context) {
         if (entries.isEmpty()) return null
 
         val inputEmb = embed(sentence)
-        val (bestIdx, bestSim) = selectCandidate(
-            sentence, inputEmb, entries.map { it.pattern to it.embedding }, ::embed
-        )
+        val (bestIdx, bestSim) = selectCandidate(sentence, inputEmb, entries, ::embed)
 
         if (bestIdx < 0 || bestSim < threshold) return null
 
@@ -155,6 +147,21 @@ internal const val TEMPLATE_RERANK_TOP_K = 10
 
 private val SLOT_REGEX = Regex("\\{(\\w+)\\}")
 
+internal class VectorEntry(
+    val pattern: String,
+    val aslTemplate: String,
+    val embedding: FloatArray
+) {
+    /** Compiled once; used for both reranking and slot adaptation. */
+    val regex: Regex by lazy { slotPatternRegex(pattern) }
+
+    /** True when every slot in the ASL template can be filled from the pattern. */
+    val fillable: Boolean by lazy {
+        val patternSlots = SLOT_REGEX.findAll(pattern).map { it.groupValues[1] }.toSet()
+        SLOT_REGEX.findAll(aslTemplate).all { it.groupValues[1] in patternSlots }
+    }
+}
+
 /**
  * Compile an English pattern like "i want {THING}" into an anchored regex with
  * one lazy named group per slot. Same construction as PatternHashTable and the
@@ -193,26 +200,30 @@ internal fun cosineSimilarity(a: FloatArray, b: FloatArray): Float {
  * Index vectors are slot-filled examples, and the sentence embedding weights
  * the slot filler heavily: "i want pizza" lands nearer "i like pizza" than
  * "i want coffee". So among the [TEMPLATE_RERANK_TOP_K] nearest entries, the
- * first (by cosine) whose pattern fully matches [input] wins over the raw
- * nearest neighbour. Its similarity is the cosine between [input] and the
- * pattern re-filled with the input's own slot values. Mirrors
- * `VectorIndex.query` in translation/tier2/query.py.
+ * first (by cosine) whose pattern fully matches [input] and whose ASL template
+ * can be completely filled from that pattern wins over the raw nearest
+ * neighbour. Its similarity is the cosine between [input] and the pattern
+ * re-filled with the input's own slot values. Mirrors `VectorIndex.query` in
+ * translation/tier2/query.py.
  */
 internal fun selectCandidate(
     input: String,
     inputEmb: FloatArray,
-    entries: List<Pair<String, FloatArray>>,
+    entries: List<VectorEntry>,
     embed: (String) -> FloatArray,
 ): Pair<Int, Float> {
     if (entries.isEmpty()) return -1 to -1f
-    val sims = entries.map { cosineSimilarity(inputEmb, it.second) }
-    val ranked = sims.indices.sortedByDescending { sims[it] }
+    val sims = FloatArray(entries.size) { cosineSimilarity(inputEmb, entries[it].embedding) }
+    val ranked = entries.indices.sortedByDescending { sims[it] }
+    val lowered = input.lowercase()
 
     for (i in ranked.take(TEMPLATE_RERANK_TOP_K)) {
-        val pattern = entries[i].first
-        val match = slotPatternRegex(pattern).find(input.lowercase()) ?: continue
-        var filled = pattern
-        for (slot in SLOT_REGEX.findAll(pattern).map { it.groupValues[1] }) {
+        val entry = entries[i]
+        // Example entries ("i want coffee" -> "{THING} I WANT") cannot fill their template
+        if (!entry.fillable) continue
+        val match = entry.regex.find(lowered) ?: continue
+        var filled = entry.pattern
+        for (slot in SLOT_REGEX.findAll(entry.pattern).map { it.groupValues[1] }) {
             val value = match.groups[slot]?.value ?: continue
             filled = filled.replace("{$slot}", value)
         }

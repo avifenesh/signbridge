@@ -29,6 +29,7 @@ from __future__ import annotations
 import json
 import re
 from dataclasses import dataclass
+from functools import lru_cache
 from pathlib import Path
 
 import numpy as np
@@ -145,10 +146,9 @@ class VectorIndex:
         distances: np.ndarray,
         indices: np.ndarray,
     ) -> tuple[int | None, float]:
-        """Return (index, similarity) of the best candidate whose source pattern
-        fully matches the query, or (None, 0.0) if no candidate does.
+        """Return (index, similarity) of the first candidate, in cosine order,
+        whose source pattern fully matches the query, or (None, 0.0) if none does.
 
-        Candidates are visited in cosine order; the first matching one wins.
         Its similarity is the cosine between the query and the pattern filled
         with the query's own slot values.
         """
@@ -168,6 +168,7 @@ class VectorIndex:
         return None, 0.0
 
 
+@lru_cache(maxsize=None)
 def _pattern_regex(pattern_english: str) -> re.Pattern[str]:
     """Compile a pattern like "i want {THING}" into an anchored regex.
 

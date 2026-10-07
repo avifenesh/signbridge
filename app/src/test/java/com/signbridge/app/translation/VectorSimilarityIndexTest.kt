@@ -106,15 +106,18 @@ class VectorSimilarityIndexTest {
         return v
     }
 
-    private val rerankEntries = listOf("i like pizza", "i want {THING}", "i want coffee")
-        .map { it to fillerEmbed(it) }
+    private val rerankEntries = listOf(
+        "i like pizza" to "{FOOD} I LIKE",
+        "i want {THING}" to "{THING} I WANT",
+        "i want coffee" to "{THING} I WANT",
+    ).map { (pattern, asl) -> VectorEntry(pattern, asl, fillerEmbed(pattern)) }
 
     @Test
     fun `template match beats shared-filler nearest neighbour`() {
         val input = "i want pizza"
         val emb = fillerEmbed(input)
         // Raw nearest neighbour is the wrong template
-        assertTrue(cosineSimilarity(emb, rerankEntries[0].second) > cosineSimilarity(emb, rerankEntries[1].second))
+        assertTrue(cosineSimilarity(emb, rerankEntries[0].embedding) > cosineSimilarity(emb, rerankEntries[1].embedding))
 
         val (idx, sim) = selectCandidate(input, emb, rerankEntries, ::fillerEmbed)
         assertEquals(1, idx)
@@ -128,7 +131,16 @@ class VectorSimilarityIndexTest {
         val emb = fillerEmbed(input)
         val (idx, sim) = selectCandidate(input, emb, rerankEntries, ::fillerEmbed)
         assertEquals(0, idx)
-        assertEquals(cosineSimilarity(emb, rerankEntries[0].second), sim, 0.0001f)
+        assertEquals(cosineSimilarity(emb, rerankEntries[0].embedding), sim, 0.0001f)
+    }
+
+    @Test
+    fun `unfillable example entry does not win the rerank`() {
+        // "i want coffee" fully matches its own example entry, but that entry's
+        // template cannot be filled from it; the template entry must win.
+        val input = "i want coffee"
+        val (idx, _) = selectCandidate(input, fillerEmbed(input), rerankEntries, ::fillerEmbed)
+        assertEquals(1, idx)
     }
 
     @Test
