@@ -1,8 +1,6 @@
 """Tokenizer-only integration checks. No model weights, inference or training are loaded."""
 from __future__ import annotations
 
-import importlib.util
-from importlib.metadata import distribution
 import inspect
 import json
 from pathlib import Path
@@ -12,7 +10,7 @@ from types import ModuleType, SimpleNamespace
 import pytest
 from tokenizers import Tokenizer
 from tokenizers.models import WordLevel
-from transformers import PreTrainedTokenizerFast, ProcessorMixin
+from transformers import AutoTokenizer, PreTrainedTokenizerFast, ProcessorMixin
 from transformers.tokenization_utils_base import PreTrainedTokenizerBase
 
 from translation._tokenizer_security import _install_chat_template_save_guard
@@ -83,44 +81,27 @@ def test_legacy_list_normalization_is_guarded(tmp_path):
     assert not (tmp_path / "output").exists()
 
 
-def optimum_save_utils():
-    # Execute the pinned serializer utility itself without importing model/Torch runtime code.
-    source = distribution("optimum").locate_file("optimum/utils/save_utils.py")
-    spec = importlib.util.spec_from_file_location("optimum_save_utils_fixture", source)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
-
-
-def test_actual_optimum_implicit_save_rejects_untrusted_legacy_config(tmp_path):
+def test_checkpoint_reload_and_resave_rejects_untrusted_legacy_config(tmp_path):
+    # The exports load a tokenizer from a checkpoint directory and save it next to the ONNX
+    # files. Seed an untrusted legacy config (no template files) and replay that round trip.
     source = tmp_path / "source"
-    # Seed the legacy config before installing the guard, with no template file writes.
     tokenizer({"../../escape": "attacker"}).save_pretrained(source, save_jinja_files=False)
-    save_utils = optimum_save_utils()
+    loaded = AutoTokenizer.from_pretrained(source, local_files_only=True)
     _install_chat_template_save_guard()
     with pytest.raises(ValueError, match="Invalid chat template name"):
-        save_utils.maybe_save_preprocessors(source, tmp_path / "output")
+        loaded.save_pretrained(tmp_path / "output")
+    assert not (tmp_path / "output").exists()
     assert not (tmp_path / "escape.jinja").exists()
 
 
-def test_actual_optimum_implicit_processor_save_is_guarded(tmp_path, monkeypatch):
-    save_utils = optimum_save_utils()
-    processor = ProcessorMixin(chat_template={"../../escape": "attacker"})
-    monkeypatch.setattr(save_utils, "maybe_load_preprocessors", lambda *args, **kwargs: [processor])
-    _install_chat_template_save_guard()
-    with pytest.raises(ValueError, match="Invalid chat template name"):
-        save_utils.maybe_save_preprocessors(tmp_path / "source", tmp_path / "output")
-    assert not (tmp_path / "escape.jinja").exists()
-
-
-def test_actual_optimum_implicit_save_preserves_normal_templates(tmp_path):
+def test_checkpoint_reload_and_resave_preserves_normal_templates(tmp_path):
     templates = {"default": "normal", "tool_use": "tools", "工具": "unicode"}
     source = tmp_path / "source"
     tokenizer(templates).save_pretrained(source)
-    save_utils = optimum_save_utils()
+    loaded = AutoTokenizer.from_pretrained(source, local_files_only=True)
     _install_chat_template_save_guard()
     output = tmp_path / "output"
-    save_utils.maybe_save_preprocessors(source, output)
+    loaded.save_pretrained(output)
     assert sorted(p.read_text() for p in output.rglob("*.jinja")) == sorted(templates.values())
 
 
@@ -129,20 +110,27 @@ def test_entrypoints_install_guard_before_implicit_saves(tmp_path, monkeypatch, 
     obj = tokenizer({"../../escape": "attacker"})
     attempts = []
 
-    class FakeOrtModel:
-        @classmethod
-        def from_pretrained(cls, *args, **kwargs):
-            # Optimum does this before returning, during its automatic temporary export.
-            attempts.append("automatic export")
-            obj.save_pretrained(tmp_path / "implicit-export")
-            raise AssertionError("unsafe automatic export was not rejected")
+    class FakeModel:
+        def eval(self):
+            return self
 
-    optimum = ModuleType("optimum")
-    ort = ModuleType("optimum.onnxruntime")
-    ort.ORTModelForFeatureExtraction = FakeOrtModel
-    ort.ORTModelForSeq2SeqLM = FakeOrtModel
-    monkeypatch.setitem(sys.modules, "optimum", optimum)
-    monkeypatch.setitem(sys.modules, "optimum.onnxruntime", ort)
+    def load_model(*args, **kwargs):
+        # The guard must already be installed before any checkpoint is loaded.
+        assert getattr(PreTrainedTokenizerBase.save_pretrained, "_signbridge_chat_template_save_guard", False)
+        attempts.append("load model")
+        return FakeModel()
+
+    def unexpected_export(*args, **kwargs):
+        raise AssertionError("ONNX export ran before the unsafe tokenizer save was rejected")
+
+    if entrypoint in {"tier2", "tier3"}:
+        import torch
+        import transformers
+
+        monkeypatch.setattr(transformers, "AutoTokenizer", SimpleNamespace(from_pretrained=lambda *a, **k: obj))
+        monkeypatch.setattr(transformers, "AutoModel", SimpleNamespace(from_pretrained=load_model))
+        monkeypatch.setattr(transformers, "AutoModelForSeq2SeqLM", SimpleNamespace(from_pretrained=load_model))
+        monkeypatch.setattr(torch.onnx, "export", unexpected_export)
 
     if entrypoint == "tier2":
         from translation.tier2.embed import MiniLMEmbedder

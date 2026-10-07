@@ -10,7 +10,8 @@ Two ONNX files are needed for T5 (encoder-decoder architecture):
   t5_encoder.onnx  — encodes the English input
   t5_decoder.onnx  — autoregressive decoding to generate ASL gloss tokens
 
-Or use optimum's export which handles this automatically.
+Both are exported directly with torch.onnx (the input/output names match the
+previous Optimum layout: encoder_model.onnx / decoder_model.onnx).
 
 Usage:
     python -m translation.tier3.export_onnx \
@@ -33,17 +34,27 @@ def export_onnx(
     *,
     quantize: bool = True,
     verbose: bool = True,
+    opset: int = 17,
 ) -> tuple[Path, Path]:
     """
     Export T5 checkpoint to ONNX (encoder + decoder).
     Returns (encoder_path, decoder_path).
+
+    encoder_model.onnx
+      inputs : input_ids int64 [batch, src_seq], attention_mask int64 [batch, src_seq]
+      output : last_hidden_state float32 [batch, src_seq, d_model]
+    decoder_model.onnx (no KV cache; feed the full decoder prefix each step)
+      inputs : input_ids int64 [batch, tgt_seq], encoder_attention_mask int64 [batch, src_seq],
+               encoder_hidden_states float32 [batch, src_seq, d_model]
+      output : logits float32 [batch, tgt_seq, vocab]
     """
+    _install_chat_template_save_guard()
     try:
-        from optimum.onnxruntime import ORTModelForSeq2SeqLM
-        from transformers import AutoTokenizer
+        import torch
+        from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
     except ImportError as e:
         raise ImportError(
-            "optimum[onnxruntime] not installed. Run: pip install optimum[onnxruntime]"
+            "torch and transformers are required. Run: pip install -r translation/requirements.txt"
         ) from e
 
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -51,19 +62,13 @@ def export_onnx(
     if verbose:
         print(f"[tier3] Exporting {checkpoint_dir} → ONNX…")
 
-    # Export via Optimum (handles encoder/decoder split automatically)
-    _install_chat_template_save_guard()
-    ort_model = ORTModelForSeq2SeqLM.from_pretrained(
-        str(checkpoint_dir),
-        export=True,
-    )
     tokenizer = AutoTokenizer.from_pretrained(str(checkpoint_dir))
-
-    ort_model.save_pretrained(str(output_dir))
+    model = AutoModelForSeq2SeqLM.from_pretrained(str(checkpoint_dir)).eval()
     tokenizer.save_pretrained(str(output_dir))
 
     encoder_path = output_dir / "encoder_model.onnx"
     decoder_path = output_dir / "decoder_model.onnx"
+    _export_seq2seq(torch, model, encoder_path, decoder_path, opset=opset)
 
     if verbose:
         for p in [encoder_path, decoder_path]:
@@ -75,6 +80,71 @@ def export_onnx(
         return encoder_q, decoder_q
 
     return encoder_path, decoder_path
+
+
+def _export_seq2seq(torch, model, encoder_path: Path, decoder_path: Path, *, opset: int) -> None:
+    """Export the encoder and a cache-free decoder of a seq2seq model with torch.onnx."""
+
+    class Encoder(torch.nn.Module):
+        def __init__(self, model):
+            super().__init__()
+            self.encoder = model.get_encoder()
+
+        def forward(self, input_ids, attention_mask):
+            return self.encoder(
+                input_ids=input_ids, attention_mask=attention_mask, return_dict=False
+            )[0]
+
+    class Decoder(torch.nn.Module):
+        def __init__(self, model):
+            super().__init__()
+            self.model = model
+
+        def forward(self, input_ids, encoder_attention_mask, encoder_hidden_states):
+            return self.model(
+                attention_mask=encoder_attention_mask,
+                decoder_input_ids=input_ids,
+                encoder_outputs=(encoder_hidden_states,),
+                use_cache=False,
+                return_dict=False,
+            )[0]
+
+    src = torch.ones((1, 8), dtype=torch.long)
+    # Trace with a padded mask so the exported graph keeps the masking path.
+    src_mask = src.clone()
+    src_mask[:, -2:] = 0
+    tgt = torch.full((1, 4), model.config.decoder_start_token_id, dtype=torch.long)
+    with torch.no_grad():
+        hidden = Encoder(model)(src, src_mask)
+        torch.onnx.export(
+            Encoder(model),
+            (src, src_mask),
+            str(encoder_path),
+            input_names=["input_ids", "attention_mask"],
+            output_names=["last_hidden_state"],
+            dynamic_axes={
+                "input_ids": {0: "batch", 1: "src_seq"},
+                "attention_mask": {0: "batch", 1: "src_seq"},
+                "last_hidden_state": {0: "batch", 1: "src_seq"},
+            },
+            opset_version=opset,
+            dynamo=False,
+        )
+        torch.onnx.export(
+            Decoder(model),
+            (tgt, src_mask, hidden),
+            str(decoder_path),
+            input_names=["input_ids", "encoder_attention_mask", "encoder_hidden_states"],
+            output_names=["logits"],
+            dynamic_axes={
+                "input_ids": {0: "batch", 1: "tgt_seq"},
+                "encoder_attention_mask": {0: "batch", 1: "src_seq"},
+                "encoder_hidden_states": {0: "batch", 1: "src_seq"},
+                "logits": {0: "batch", 1: "tgt_seq"},
+            },
+            opset_version=opset,
+            dynamo=False,
+        )
 
 
 def _quantize_pair(

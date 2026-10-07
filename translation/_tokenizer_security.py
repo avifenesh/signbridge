@@ -1,8 +1,9 @@
-"""Guard tokenizer and processor saves until the export stack can use patched Transformers.
+"""Guard tokenizer and processor saves against unsafe chat template names.
 
-Optimum and Trainer save these objects internally, before our explicit saves. Install the
-guard on their shared serializers before starting export or training, including temporary
-exports and epoch checkpoints. This does not resolve the pipeline's dependency conflicts.
+Transformers 5.10.0 fixes GHSA-xrqw-3rrv-vx5w upstream. This guard stays as defense in
+depth: it rejects path-like template names before any file is written, including the
+tokenizer saves done by the ONNX exports and Trainer's epoch checkpoints. Install it
+before starting export or training.
 """
 from __future__ import annotations
 

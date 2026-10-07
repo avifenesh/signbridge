@@ -8,7 +8,7 @@ Artifacts produced:
   patterns.json    — Tier 1 pattern hash table
   faiss.index      — Tier 2 FAISS vector index  (requires sentence-transformers)
   index_map.json   — Tier 2 vector → ASL mapping (requires sentence-transformers)
-  minilm.onnx      — Tier 2 MiniLM ONNX model   (requires optimum)
+  minilm.onnx      — Tier 2 MiniLM ONNX model   (requires torch + transformers)
   t5_encoder_int8.onnx / t5_decoder_int8.onnx   (requires checkpoint from training)
 
 Usage:

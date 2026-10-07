@@ -1,19 +1,18 @@
 # Agent 5 — ASL Translation Engine
-# Python 3.10+
+# Python 3.11 or 3.12 (onnxruntime 1.30 has no cp310 wheel, faiss-cpu 1.8.0 none for cp313)
 
 # Tier 2: sentence embedding + vector similarity
-sentence-transformers==2.7.0
+sentence-transformers==6.1.0
 faiss-cpu==1.8.0
 
 # Tier 3: T5-small fine-tuning + ONNX export
-transformers==5.5.0
+transformers==5.19.0
 torch==2.13.0
-optimum[onnxruntime]==1.20.0
-onnx==1.22.0
-onnxruntime==1.18.0
+onnx==1.23.2
+onnxruntime==1.30.0
 
 # Data handling
-datasets==2.19.0
+datasets==5.1.0
 pandas==2.2.2
 numpy==1.26.4
 
