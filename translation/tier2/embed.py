@@ -66,11 +66,14 @@ class MiniLMEmbedder:
         The exported model accepts:
           input_ids      : int64 [batch, seq]
           attention_mask : int64 [batch, seq]
+          token_type_ids : int64 [batch, seq] (when the tokenizer uses them)
         and produces:
-          sentence_embedding : float32 [batch, 384]
+          last_hidden_state : float32 [batch, seq, 384]
 
-        Android loads this via OnnxRuntime, tokenizes with the HuggingFace
-        tokenizer (tokenizer.json bundled alongside), and calls normalize().
+        This is the same layout the previous Optimum export produced. Android
+        loads it via OnnxRuntime, tokenizes with the HuggingFace tokenizer
+        (tokenizer.json bundled alongside), mean-pools over attention_mask and
+        L2-normalizes.
         """
         if self._model is None:
             raise RuntimeError("Call load() before export_onnx()")
@@ -78,30 +81,49 @@ class MiniLMEmbedder:
         output_path = Path(output_path)
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
+        _install_chat_template_save_guard()
         try:
-            from optimum.onnxruntime import ORTModelForFeatureExtraction
-            from transformers import AutoTokenizer
+            import torch
+            from transformers import AutoModel, AutoTokenizer
         except ImportError as e:
             raise ImportError(
-                "optimum[onnxruntime] not installed. Run: pip install optimum[onnxruntime]"
+                "torch and transformers are required. Run: pip install -r translation/requirements.txt"
             ) from e
 
         cache = str(self._model_cache) if self._model_cache else None
-        _install_chat_template_save_guard()
-        ort_model = ORTModelForFeatureExtraction.from_pretrained(
-            self.MODEL_NAME,
-            export=True,
-            cache_dir=cache,
-        )
         tokenizer = AutoTokenizer.from_pretrained(self.MODEL_NAME, cache_dir=cache)
-
-        ort_model.save_pretrained(str(output_path.parent))
+        model = AutoModel.from_pretrained(self.MODEL_NAME, cache_dir=cache).eval()
         tokenizer.save_pretrained(str(output_path.parent))
 
-        # Rename the default model.onnx to our expected name
-        default = output_path.parent / "model.onnx"
-        if default.exists() and default != output_path:
-            default.rename(output_path)
+        input_names = ["input_ids", "attention_mask"]
+        if "token_type_ids" in tokenizer.model_input_names:
+            input_names.append("token_type_ids")
+
+        class Encoder(torch.nn.Module):
+            def __init__(self, model):
+                super().__init__()
+                self.model = model
+
+            def forward(self, *inputs):
+                return self.model(**dict(zip(input_names, inputs)), return_dict=False)[0]
+
+        dummy = [torch.ones((1, 8), dtype=torch.long) for _ in input_names]
+        # Trace with a padded mask so the exported graph keeps the masking path.
+        dummy[1][:, -2:] = 0
+        dummy[2:] = [torch.zeros_like(t) for t in dummy[2:]]
+        dynamic_axes = {name: {0: "batch", 1: "seq"} for name in input_names}
+        dynamic_axes["last_hidden_state"] = {0: "batch", 1: "seq"}
+        with torch.no_grad():
+            torch.onnx.export(
+                Encoder(model),
+                tuple(dummy),
+                str(output_path),
+                input_names=input_names,
+                output_names=["last_hidden_state"],
+                dynamic_axes=dynamic_axes,
+                opset_version=opset,
+                dynamo=False,
+            )
 
         print(f"[tier2] MiniLM ONNX exported → {output_path}")
         return output_path
