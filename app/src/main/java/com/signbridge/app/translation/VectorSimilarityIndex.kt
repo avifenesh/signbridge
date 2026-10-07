@@ -140,8 +140,6 @@ class VectorSimilarityIndex(private val context: Context) {
     }
 }
 
-private const val ADAPT_TAG = "VectorSimilarity"
-
 /** Number of nearest neighbours checked for a full template match. */
 internal const val TEMPLATE_RERANK_TOP_K = 10
 
@@ -152,8 +150,8 @@ internal class VectorEntry(
     val aslTemplate: String,
     val embedding: FloatArray
 ) {
-    /** Compiled once; used for both reranking and slot adaptation. */
-    val regex: Regex by lazy { slotPatternRegex(pattern) }
+    /** Compiled once; used for reranking. */
+    val slotPattern: SlotPattern by lazy { SlotPattern(pattern) }
 
     /** True when every slot in the ASL template can be filled from the pattern. */
     val fillable: Boolean by lazy {
@@ -163,20 +161,32 @@ internal class VectorEntry(
 }
 
 /**
- * Compile an English pattern like "i want {THING}" into an anchored regex with
- * one lazy named group per slot. Same construction as PatternHashTable and the
- * Python `_pattern_regex`.
+ * An English pattern like "i want {THING}" compiled into an anchored regex with
+ * one lazy capture group per slot and an optional trailing [.?!]. Same shape as
+ * the Python `_pattern_regex`.
+ *
+ * Groups are positional, not named: bundled slot names such as FAMILY_MEMBER
+ * contain underscores, which Java/Android named groups reject.
  */
-internal fun slotPatternRegex(pattern: String): Regex {
-    val parts = SLOT_REGEX.split(pattern)
-    val slots = SLOT_REGEX.findAll(pattern).map { it.groupValues[1] }.toList()
-    val sb = StringBuilder("^")
-    for (i in parts.indices) {
-        sb.append(Regex.escape(parts[i]))
-        if (i < slots.size) sb.append("(?<${slots[i]}>.+?)")
+internal class SlotPattern(pattern: String) {
+    val slots: List<String> = SLOT_REGEX.findAll(pattern).map { it.groupValues[1] }.toList()
+
+    val regex: Regex = run {
+        val parts = SLOT_REGEX.split(pattern)
+        val sb = StringBuilder("^")
+        for (i in parts.indices) {
+            sb.append(Regex.escape(parts[i]))
+            if (i < slots.size) sb.append("(.+?)")
+        }
+        sb.append("[.?!]?\$")
+        Regex(sb.toString(), RegexOption.IGNORE_CASE)
     }
-    sb.append("[.?!]?\$")
-    return Regex(sb.toString(), RegexOption.IGNORE_CASE)
+
+    /** Slot name to captured value, or null if [input] does not match. */
+    fun match(input: String): Map<String, String>? {
+        val m = regex.find(input) ?: return null
+        return slots.withIndex().associate { (i, slot) -> slot to m.groupValues[i + 1] }
+    }
 }
 
 internal fun cosineSimilarity(a: FloatArray, b: FloatArray): Float {
@@ -221,12 +231,9 @@ internal fun selectCandidate(
         val entry = entries[i]
         // Example entries ("i want coffee" -> "{THING} I WANT") cannot fill their template
         if (!entry.fillable) continue
-        val match = entry.regex.find(lowered) ?: continue
+        val values = entry.slotPattern.match(lowered) ?: continue
         var filled = entry.pattern
-        for (slot in SLOT_REGEX.findAll(entry.pattern).map { it.groupValues[1] }) {
-            val value = match.groups[slot]?.value ?: continue
-            filled = filled.replace("{$slot}", value)
-        }
+        for ((slot, value) in values) filled = filled.replace("{$slot}", value)
         return i to cosineSimilarity(inputEmb, embed(filled))
     }
     return ranked[0] to sims[ranked[0]]
@@ -246,22 +253,13 @@ internal fun adaptTemplate(aslTemplate: String, matchedPattern: String, input: S
     }
 
     // Try to extract slot values with the matched pattern's regex
-    try {
-        val match = slotPatternRegex(matchedPattern).find(input.lowercase())
-        if (match != null) {
-            var filled = aslTemplate
-            for (slot in slots) {
-                val value = try { match.groups[slot]?.value?.uppercase() } catch (e: Exception) { null }
-                if (value != null) {
-                    filled = filled.replace("{$slot}", value)
-                }
-            }
-            if (!SLOT_REGEX.containsMatchIn(filled)) {
-                return filled.split("\\s+".toRegex()).filter { it.isNotBlank() }
-            }
+    val values = SlotPattern(matchedPattern).match(input.lowercase())
+    if (values != null) {
+        var filled = aslTemplate
+        for ((slot, value) in values) filled = filled.replace("{$slot}", value.uppercase())
+        if (!SLOT_REGEX.containsMatchIn(filled)) {
+            return filled.split("\\s+".toRegex()).filter { it.isNotBlank() }
         }
-    } catch (e: Exception) {
-        Log.d(ADAPT_TAG, "Slot extraction failed: ${e.message}")
     }
 
     // Fallback: return template without slot markers

@@ -162,4 +162,32 @@ class VectorSimilarityIndexTest {
     fun `selectCandidate on empty index`() {
         assertEquals(-1, selectCandidate("hi", floatArrayOf(1f), emptyList()) { floatArrayOf(1f) }.first)
     }
+
+    @Test
+    fun `underscore slot names compile and match`() {
+        // Java named groups reject underscores; bundled assets use {FAMILY_MEMBER}
+        val sp = SlotPattern("my {FAMILY_MEMBER}'s name is {NAME}")
+        assertEquals(mapOf("FAMILY_MEMBER" to "sister", "NAME" to "dana"), sp.match("my sister's name is dana"))
+        assertEquals(
+            listOf("MY", "MOTHER", "MISS", "I"),
+            adaptTemplate("MY {FAMILY_MEMBER} MISS I", "i miss my {FAMILY_MEMBER}", "i miss my mother")
+        )
+        val entries = listOf(VectorEntry("i miss my {FAMILY_MEMBER}", "MY {FAMILY_MEMBER} MISS I", floatArrayOf(1f, 0f)))
+        assertEquals(0, selectCandidate("i miss my mother", floatArrayOf(1f, 0f), entries) { floatArrayOf(1f, 0f) }.first)
+    }
+
+    @Test
+    fun `every bundled pattern compiles`() {
+        val english = Regex("\"(?:english|pattern)\":\\s*\"((?:[^\"\\\\]|\\\\.)*)\"")
+        for (asset in listOf("patterns.json", "vector_index.json")) {
+            val text = java.io.File("src/main/assets/translation/$asset").readText()
+            val patterns = english.findAll(text).map { it.groupValues[1] }.toSet()
+            assertTrue("no patterns read from $asset", patterns.size > 100)
+            for (pattern in patterns) {
+                val sp = SlotPattern(pattern)
+                val sample = sp.slots.fold(pattern) { acc, slot -> acc.replace("{$slot}", "x") }
+                assertNotNull("$asset: $pattern", sp.match(sample))
+            }
+        }
+    }
 }
