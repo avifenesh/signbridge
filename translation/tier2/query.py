@@ -12,6 +12,17 @@ Slot adaptation:
   we attempt to re-apply the source pattern's regex to the query sentence to
   extract slot values. If extraction succeeds, we fill the ASL template.
   If it fails, we fall back to using the stored ASL gloss directly.
+
+Template-aware reranking:
+  Corpus vectors are slot-filled examples ("i like pizza", "i want coffee").
+  MiniLM weights the slot filler heavily, so a query can land closer to an
+  example of the wrong template that happens to share its filler ("i want
+  pizza" -> "i like pizza") than to the right template with a different
+  filler. Before taking the raw nearest neighbour we therefore check the
+  top-k candidates for one whose source pattern fully matches the query.
+  Such a candidate is scored against its pattern re-filled with the query's
+  own slot values, so the filler difference with the stored example no
+  longer counts as semantic distance.
 """
 from __future__ import annotations
 
@@ -90,23 +101,27 @@ class VectorIndex:
     def is_loaded(self) -> bool:
         return self._loaded
 
-    def query(self, sentence: str, top_k: int = 3) -> VectorMatch | None:
+    def query(self, sentence: str, top_k: int = 10) -> VectorMatch | None:
         """
         Find nearest ASL match for an English sentence.
 
         Returns None if best cosine similarity is below threshold.
         Applies slot adaptation when the matched pattern has {SLOT} placeholders.
+        Among the top_k candidates, one whose source pattern fully matches the
+        query wins over the raw nearest neighbour (see module docstring).
         """
         if not self._loaded:
             raise RuntimeError("Call load() before query()")
 
-        vec = self._embedder.embed_one(sentence.lower()).reshape(1, -1)
-        distances, indices = self._index.search(vec, top_k)
+        query = sentence.lower()
+        vec = self._embedder.embed_one(query)
+        distances, indices = self._index.search(vec.reshape(1, -1), top_k)
 
-        best_dist = float(distances[0][0])
-        best_idx = int(indices[0][0])
+        best_idx, best_sim = self._template_match(query, vec, distances[0], indices[0])
+        if best_idx is None:
+            best_idx, best_sim = int(indices[0][0]), float(distances[0][0])
 
-        if best_dist < self.threshold:
+        if best_idx < 0 or best_sim < self.threshold:
             return None
 
         entry = self._mapping[best_idx]
@@ -114,14 +129,55 @@ class VectorIndex:
         pattern = entry["pattern"]
 
         # Attempt slot adaptation if the source pattern has slots
-        adapted = _adapt_slots(sentence.lower(), pattern, asl)
+        adapted = _adapt_slots(query, pattern, asl)
 
         return VectorMatch(
             asl_gloss=adapted,
             source_english=entry["english"],
             source_pattern=pattern,
-            cosine_similarity=best_dist,
+            cosine_similarity=best_sim,
         )
+
+    def _template_match(
+        self,
+        query: str,
+        query_vec: np.ndarray,
+        distances: np.ndarray,
+        indices: np.ndarray,
+    ) -> tuple[int | None, float]:
+        """Return (index, similarity) of the best candidate whose source pattern
+        fully matches the query, or (None, 0.0) if no candidate does.
+
+        Candidates are visited in cosine order; the first matching one wins.
+        Its similarity is the cosine between the query and the pattern filled
+        with the query's own slot values.
+        """
+        for idx in indices:
+            idx = int(idx)
+            if idx < 0:
+                continue
+            pattern = self._mapping[idx]["pattern"]
+            m = _pattern_regex(pattern).match(query)
+            if not m:
+                continue
+            filled = pattern
+            for slot, value in m.groupdict().items():
+                filled = filled.replace(f"{{{slot}}}", value)
+            filled_vec = self._embedder.embed_one(filled)
+            return idx, float(np.dot(query_vec, filled_vec))
+        return None, 0.0
+
+
+def _pattern_regex(pattern_english: str) -> re.Pattern[str]:
+    """Compile a pattern like "i want {THING}" into an anchored regex.
+
+    Same logic as PatternHashTable in Kotlin: each {SLOT} becomes a lazy named
+    group and an optional trailing [.?!] is allowed.
+    """
+    regex_str = re.escape(pattern_english)
+    for slot in re.findall(r"\{(\w+)\}", pattern_english):
+        regex_str = regex_str.replace(rf"\{{{slot}\}}", rf"(?P<{slot}>.+?)")
+    return re.compile(rf"^{regex_str}[.?!]?$", re.IGNORECASE)
 
 
 def _adapt_slots(query: str, pattern_english: str, asl_template: str) -> str:
@@ -135,13 +191,7 @@ def _adapt_slots(query: str, pattern_english: str, asl_template: str) -> str:
         # No slots — direct gloss
         return asl_template
 
-    # Build pattern regex (same logic as PatternHashTable in Kotlin)
-    regex_str = re.escape(pattern_english)
-    for slot in slot_names:
-        regex_str = regex_str.replace(rf"\{{{slot}\}}", rf"(?P<{slot}>.+?)")
-    regex_str = rf"^{regex_str}[.?!]?$"
-
-    m = re.match(regex_str, query, re.IGNORECASE)
+    m = _pattern_regex(pattern_english).match(query)
     if not m:
         # Regex didn't match — strip slot placeholders from template
         result = asl_template
