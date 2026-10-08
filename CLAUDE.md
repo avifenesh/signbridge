@@ -11,7 +11,7 @@
 3. **Use relay (Path B) as the audio source.** Default `useRelay=true` in `Preferences.kt`.
    *WHY: Path A is dead. Bot relay via pytgcalls is the only way to capture Telegram call audio.*
 
-4. **Run `./gradlew testDebugUnitTest` after any Kotlin change.** 58 tests must stay green.
+4. **Run `./gradlew testDebugUnitTest` after any Kotlin change.** 66 tests must stay green.
 
 5. **Store all user preferences in `Preferences.kt` via SharedPreferences.** No server, no account.
 
@@ -37,7 +37,7 @@ Free, Apache 2.0, no account required.
 ```bash
 # Android (requires ANDROID_HOME set)
 ./gradlew assembleDebug          # build APK
-./gradlew testDebugUnitTest      # 58 unit tests — must pass
+./gradlew testDebugUnitTest      # 66 unit tests — must pass
 
 # Dictionary rebuild (after adding signs)
 python3 -c "
@@ -151,7 +151,7 @@ cp agent4/data/pattern_embeddings.json app/src/main/assets/translation/vector_in
 
 ## Current State
 
-- Build: passing, 58 unit tests green, APK ~111MB debug
+- Build: passing, 66 unit tests green, APK ~111MB debug
 - Dictionary: 115 signs (79 content + 26 A-Z + 10 numbers)
 - Translation: 224 patterns + 686 MiniLM vectors
 - **Demo mode works without relay** — `DemoActivity` for standalone testing
