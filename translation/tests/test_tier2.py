@@ -167,9 +167,9 @@ def test_slot_adaptation():
     from translation.tier2.query import VectorIndex
     idx = VectorIndex().load()
     match = idx.query("i want pizza")
-    if match is not None:
-        # If it matched "I want {THING}" → "{THING} I WANT", PIZZA should appear
-        assert "PIZZA" in match.asl_gloss or "WANT" in match.asl_gloss
+    assert match is not None
+    assert match.source_pattern == "i want {THING}"
+    assert match.asl_gloss == "PIZZA I WANT"
 
 
 # ── Slot adaptation unit tests ─────────────────────────────────────────────────
