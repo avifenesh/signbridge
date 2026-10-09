@@ -213,8 +213,9 @@ internal fun cosineSimilarity(a: FloatArray, b: FloatArray): Float {
  * first (by cosine) whose pattern fully matches [input] and whose ASL template
  * can be completely filled from that pattern wins over the raw nearest
  * neighbour. Its similarity is the cosine between [input] and the pattern
- * re-filled with the input's own slot values. Mirrors `VectorIndex.query` in
- * translation/tier2/query.py.
+ * re-filled with the input's own slot values, so it is ~1.0 by construction:
+ * the full pattern match is the gate, not the threshold. Mirrors
+ * `VectorIndex.query` in translation/tier2/query.py.
  */
 internal fun selectCandidate(
     input: String,
@@ -234,7 +235,8 @@ internal fun selectCandidate(
         val values = entry.slotPattern.match(lowered) ?: continue
         var filled = entry.pattern
         for ((slot, value) in values) filled = filled.replace("{$slot}", value)
-        return i to cosineSimilarity(inputEmb, embed(filled))
+        // Cosine of identical text can land a hair above 1.0 from float error
+        return i to cosineSimilarity(inputEmb, embed(filled)).coerceAtMost(1f)
     }
     return ranked[0] to sims[ranked[0]]
 }
