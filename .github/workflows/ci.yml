@@ -1,0 +1,57 @@
+name: ci
+
+permissions:
+  contents: read
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  translation:
+    # Builds the FAISS index and runs the translation tests, including the
+    # Tier 2 tests that skip when no index exists.
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: translation/requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/huggingface
+            .translation_cache/models
+          key: minilm-all-MiniLM-L6-v2
+      - name: Install
+        run: |
+          pip install -c translation/requirements.txt \
+            --extra-index-url https://download.pytorch.org/whl/cpu \
+            numpy faiss-cpu sentence-transformers transformers torch pytest
+      - name: Build Tier 2 index
+        run: python -m translation.tier2.build_index
+      - name: Test
+        run: python -m pytest translation/tests -q -rs
+
+  android-unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.5"
+      - name: Unit tests
+        run: gradle :app:testDebugUnitTest --no-daemon

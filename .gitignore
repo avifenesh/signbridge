@@ -41,3 +41,7 @@ vosk-model*/
 
 # Gradle wrapper jar (downloaded automatically)
 gradle/wrapper/gradle-wrapper.jar
+
+# Built by python -m translation.tier2.build_index
+app/src/main/assets/translation/faiss.index
+app/src/main/assets/translation/index_map.json

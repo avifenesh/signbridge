@@ -23,6 +23,13 @@ Template-aware reranking:
   Such a candidate is scored against its pattern re-filled with the query's
   own slot values, so the filler difference with the stored example no
   longer counts as semantic distance.
+
+  A full pattern match is therefore the gate, not the cosine threshold: the
+  re-filled score is ~1.0 by construction. This is deliberate. On 176
+  template-filled queries (every slotted pattern, two fillers each) the raw
+  nearest-neighbour cosine reaches 0.75 for only 59, median 0.68, so gating
+  on it would reject about two thirds of correct template matches. The
+  threshold still applies to queries with no template match.
 """
 from __future__ import annotations
 
@@ -164,7 +171,8 @@ class VectorIndex:
             for slot, value in m.groupdict().items():
                 filled = filled.replace(f"{{{slot}}}", value)
             filled_vec = self._embedder.embed_one(filled)
-            return idx, float(np.dot(query_vec, filled_vec))
+            # Float error can push the cosine of identical text just past 1.0
+            return idx, min(1.0, float(np.dot(query_vec, filled_vec)))
         return None, 0.0
 
 
