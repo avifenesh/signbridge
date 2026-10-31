@@ -29,18 +29,18 @@ Sign Dictionary (115 signs + fingerspelling for unknown words)
 
 ## Status
 
-**Alpha — builds, 42 tests pass, needs first real device test.**
+**Alpha — builds, 66 tests pass, needs first real device test.**
 
 | Component | Status |
 |-----------|--------|
-| Android app (Kotlin) | 25 source files, compiles clean |
+| Android app (Kotlin) | 23 source files, compiles clean |
 | 3D renderer (OpenGL ES + LBS skinning) | Complete, needs artist GLB model |
 | 2D sprite renderer (video call mode) | Complete |
 | STT (Vosk, on-device) | Integrated |
-| ASL translation (3-tier) | 224 patterns + 378 vectors + grammar rules |
+| ASL translation (3-tier) | 224 patterns + 686 vectors + grammar rules |
 | Sign dictionary | 115 signs (79 ASL + 26 fingerspelling + 10 numbers) |
 | Bot relay server | Complete (FastAPI + pytgcalls) |
-| Unit tests | 42 tests, all passing |
+| Unit tests | 66 tests, all passing |
 
 ## Quick Start
 
@@ -48,6 +48,7 @@ Sign Dictionary (115 signs + fingerspelling for unknown words)
 
 ```bash
 export ANDROID_HOME=/path/to/android-sdk
+gradle wrapper --gradle-version 8.5   # the wrapper jar is not committed
 ./gradlew assembleDebug
 # → app/build/outputs/apk/debug/app-debug.apk
 ```
@@ -80,7 +81,7 @@ uvicorn main:app --host 0.0.0.0 --port 8080
 ### Run Tests
 
 ```bash
-./gradlew testDebugUnitTest   # 42 tests
+./gradlew testDebugUnitTest   # 66 tests
 ```
 
 ## Audio Capture: Why a Relay Bot?
@@ -101,7 +102,9 @@ signbridge/
 │       ├── stt/            # VAD + Vosk STT pipeline
 │       ├── translation/    # 3-tier ASL translation + grammar rules
 │       ├── model/          # Shared types (Quaternion, FaceParams, etc.)
-│       └── ui/             # Setup, Main, Settings
+│       ├── settings/       # Settings screen
+│       ├── util/           # Preferences (SharedPreferences)
+│       └── ui/             # Setup, Main, Demo
 ├── relay/                  # Bot relay server (Python/FastAPI)
 ├── dictionary/             # Sign dictionary pipeline (Python)
 ├── agent4/                 # ASL translation engine (Python)
