@@ -2,7 +2,7 @@
 
 Real-time ASL signing overlay for Telegram calls on Android.
 
-The hearing person speaks normally. The deaf person sees a cartoon avatar signing everything said, rendered as a floating overlay on top of Telegram — with English subtitles always visible.
+The hearing person speaks normally. The deaf person sees a cartoon avatar signing everything said, rendered as a floating overlay on top of Telegram, with English subtitles always visible.
 
 **Free. Open source. No account required.**
 
@@ -29,7 +29,7 @@ Sign Dictionary (115 signs + fingerspelling for unknown words)
 
 ## Status
 
-**Alpha — builds, 66 tests pass, needs first real device test.**
+**Alpha: builds, 66 tests pass, needs first real device test.**
 
 | Component | Status |
 |-----------|--------|
@@ -55,7 +55,7 @@ gradle wrapper --gradle-version 8.5   # the wrapper jar is not committed
 
 ### Deploy the Relay Server
 
-The relay bot is **required** — it joins Telegram calls and streams audio to the app.
+The relay bot is **required**: it joins Telegram calls and streams audio to the app.
 
 ```bash
 cd relay
@@ -86,7 +86,7 @@ uvicorn main:app --host 0.0.0.0 --port 8080
 
 ## Audio Capture: Why a Relay Bot?
 
-Android's AudioPlaybackCapture API **cannot capture voice call audio** — `USAGE_VOICE_COMMUNICATION` is hardcoded excluded at the OS level (confirmed from AOSP source). Telegram uses this audio type for all calls.
+Android's AudioPlaybackCapture API **cannot capture voice call audio**: `USAGE_VOICE_COMMUNICATION` is hardcoded excluded at the OS level (confirmed from AOSP source). Telegram uses this audio type for all calls.
 
 The relay bot (pytgcalls) is the only viable path. The hearing person will see the bot as a call participant.
 
@@ -141,15 +141,15 @@ def sign_your_word() -> list[RawFrame]:
 
 1. Create GLB in Blender with 48 named joints (see `tools/generate_avatar_glb.py`)
 2. Drop at `app/src/main/assets/models/avatar.glb`
-3. No code changes needed — renderer loads it automatically
+3. No code changes needed; the renderer loads it automatically
 
 ## Documentation
 
 | Document | Content |
 |----------|---------|
-| [README.md](README.md) | This file — overview, quick start |
+| [README.md](README.md) | This file: overview, quick start |
 | [SPEC.md](SPEC.md) | Full product specification |
-| [HANDOVER.md](HANDOVER.md) | Complete technical state — every file, every decision |
+| [HANDOVER.md](HANDOVER.md) | Complete technical state: every file, every decision |
 | [NEXT_TASKS.md](NEXT_TASKS.md) | Prioritized task list with effort estimates |
 | [LICENSE](LICENSE) | Apache 2.0 |
 
